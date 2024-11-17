@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState } from "react";
 // import "bootstrap/dist/css/bootstrap.css";
@@ -135,7 +135,6 @@ export default function PoolRadMain() {
         hearNoiseIndex={124}
         climbWallsIndex={125}
         readLanguagesIndex={126}
-
       />
     );
   }
@@ -196,279 +195,257 @@ export default function PoolRadMain() {
           from <em>Pool of Radiance</em>.
         </h5>
 
-        <h6>Need somewhere to start? Try the <em>Pool of Radiance</em> <a href={"/files/poolRadDefaultCharacters.zip"}>default characters</a>.</h6>
-       
-        <div
-          className="flex justify-evenly"
-          
-        >
-          <div className="col-md-auto">
-            <Image
-            height={400}
-            style={{width:"auto"}}
-              className="coverImage"
-              src={poolRadCoverImage}
-              alt="pool of radiance"
-            />
-          </div>
-          <div className="col-md-auto">
-            <a href="/azure">
-              <Image
-              height={400}
-              style={{width:"auto"}}
-                className="coverImageFaded"
-                src={azureCoverImage}
-                alt="curse of the azure bonds"
-              />
-            </a>
-          </div>
-          <div className="col-md-auto">
-            <a href="/silverblades">
-              <Image
-              height={400}
-              style={{width:"auto"}}
-                className="coverImageFaded"
-                src={silverBladesCoverImage}
-                alt="secret of the silver blades"
-              />
-            </a>
-          </div>
-          <div className="col-md-auto">
-            <a href="/pod">
-              <Image
-              height={400}
-              style={{width:"auto"}}
-                className="coverImageFaded"
-                src={podCoverImage}
-                alt="pools of darkness"
-              />
-            </a>
-          </div>
+        <h6>
+          Need somewhere to start? Try the <em>Pool of Radiance</em>{" "}
+          <a href={"/files/poolRadDefaultCharacters.zip"}>default characters</a>
+          .
+        </h6>
+
+        <div className="flex justify-center">
+          <Image
+            height={200}
+            style={{ width: "auto" }}
+            src={poolRadCoverImage}
+            alt="pool of radiance"
+          />
+
+          <Image
+            height={200}
+            style={{ width: "auto" }}
+            src={azureCoverImage}
+            alt="curse of the azure bonds"
+          />
+
+          <Image
+            height={200}
+            style={{ width: "auto" }}
+            src={silverBladesCoverImage}
+            alt="secret of the silver blades"
+          />
+
+          <Image
+            height={200}
+            style={{ width: "auto" }}
+            src={podCoverImage}
+            alt="pools of darkness"
+          />
         </div>
       </>
     );
 
   return (
     <div className="charEditBody">
-      
+      <Image src={poolRadBanner} alt="pool of radiance orignal title screen" />
+      <h2 className="mainTitle">
+        Advanced Dungeons and Dragons: Pool of Radiance
+      </h2>
 
-        <Image src={poolRadBanner} alt="pool of radiance orignal title screen" />
-        <h2 className="mainTitle">
-          Advanced Dungeons and Dragons: Pool of Radiance
-        </h2>
-       
-      
-        
-          <h3 style={{ textAlign: "center" }}>Character Editor</h3>
-          <div className="mb-3">
-            <input
-              className="form-control"
-              type="file"
-              id="fileSelect"
-              accept=".sav"
-              onChange={(e) => {
-                // createInventoryFile(e);
-                setSelectedFile(e.target.files[0]);
-                loadFile(e.target.files[0]);
-              }}
-            />
-          </div>
-          {dataArray ? (
-            <button
-              className="btn downloadButton"
-              onClick={() => exportSaveFile()}
-            >
-              Download Character File
-            </button>
-          ) : null}
-          <br />
-          <p></p>
-          {dataArray ? (
-            <>
-              <div className="accordion" id="charEditAccordion">
-                <div className="accordion-item">
-                  <h2 className="accordion-header" id="headingOne">
-                    <button
-                      className="accordion-button"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseOne"
-                      aria-expanded="true"
-                      aria-controls="collapseOne"
-                    >
-                      Character Info
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseOne"
-                    className="accordion-collapse collapse show"
-                    aria-labelledby="headingOne"
-                  >
-                    <div className="accordion-body">
-                      <CharInfoDisplay />
-                    </div>
-                  </div>
+      <h3 style={{ textAlign: "center" }}>Character Editor</h3>
+      <div className="mb-3">
+        <input
+          className="form-control"
+          type="file"
+          id="fileSelect"
+          accept=".sav"
+          onChange={(e) => {
+            // createInventoryFile(e);
+            setSelectedFile(e.target.files[0]);
+            loadFile(e.target.files[0]);
+          }}
+        />
+      </div>
+      {dataArray ? (
+        <button className="btn downloadButton" onClick={() => exportSaveFile()}>
+          Download Character File
+        </button>
+      ) : null}
+      <br />
+      <p></p>
+      {dataArray ? (
+        <>
+          <div className="accordion" id="charEditAccordion">
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="headingOne">
+                <button
+                  className="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  Character Info
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                className="accordion-collapse collapse show"
+                aria-labelledby="headingOne"
+              >
+                <div className="accordion-body">
+                  <CharInfoDisplay />
                 </div>
-                <div className="accordion-item">
-                  <h2 className="accordion-header" id="headingTwo">
-                    <button
-                      className="accordion-button"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseTwo"
-                      aria-expanded="true"
-                      aria-controls="collapseTwo"
-                    >
-                      Ability Scores and Levels
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseTwo"
-                    className="accordion-collapse collapse show"
-                    aria-labelledby="headingTwo"
-                  >
-                    <div className="accordion-body">
-                      <CharAbilityDisplay />
-                    </div>
-                  </div>
+              </div>
+            </div>
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="headingTwo">
+                <button
+                  className="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="true"
+                  aria-controls="collapseTwo"
+                >
+                  Ability Scores and Levels
+                </button>
+              </h2>
+              <div
+                id="collapseTwo"
+                className="accordion-collapse collapse show"
+                aria-labelledby="headingTwo"
+              >
+                <div className="accordion-body">
+                  <CharAbilityDisplay />
                 </div>
+              </div>
+            </div>
 
-                <div className="accordion-item">
-                  <h2 className="accordion-header" id="headingSaves">
-                    <button
-                      className="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseSaves"
-                      aria-expanded="true"
-                      aria-controls="collapseSaves"
-                    >
-                      Saving Throws
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseSaves"
-                    className="accordion-collapse collapse"
-                    aria-labelledby="headingSaves"
-                  >
-                    <div className="accordion-body">
-                      <CharSavesDisplay />
-                    </div>
-                  </div>
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="headingSaves">
+                <button
+                  className="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseSaves"
+                  aria-expanded="true"
+                  aria-controls="collapseSaves"
+                >
+                  Saving Throws
+                </button>
+              </h2>
+              <div
+                id="collapseSaves"
+                className="accordion-collapse collapse"
+                aria-labelledby="headingSaves"
+              >
+                <div className="accordion-body">
+                  <CharSavesDisplay />
                 </div>
+              </div>
+            </div>
 
-                <div className="accordion-item">
-                  <h2 className="accordion-header" id="headingThief">
-                    <button
-                      className="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseThief"
-                      aria-expanded="true"
-                      aria-controls="collapseThief"
-                    >
-                      Thief Skills
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseThief"
-                    className="accordion-collapse collapse"
-                    aria-labelledby="headingThief"
-                  >
-                    <div className="accordion-body">
-                      <ThiefSkillsDisplay />
-                    </div>
-                  </div>
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="headingThief">
+                <button
+                  className="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThief"
+                  aria-expanded="true"
+                  aria-controls="collapseThief"
+                >
+                  Thief Skills
+                </button>
+              </h2>
+              <div
+                id="collapseThief"
+                className="accordion-collapse collapse"
+                aria-labelledby="headingThief"
+              >
+                <div className="accordion-body">
+                  <ThiefSkillsDisplay />
                 </div>
+              </div>
+            </div>
 
-                <div className="accordion-item">
-                  <h2 className="accordion-header" id="headingMoney">
-                    <button
-                      className="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseMoney"
-                      aria-expanded="true"
-                      aria-controls="collapseMoney"
-                    >
-                      Money
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseMoney"
-                    className="accordion-collapse collapse"
-                    aria-labelledby="headingMoney"
-                  >
-                    <div className="accordion-body">
-                      <MoneyDisplay />
-                    </div>
-                  </div>
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="headingMoney">
+                <button
+                  className="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseMoney"
+                  aria-expanded="true"
+                  aria-controls="collapseMoney"
+                >
+                  Money
+                </button>
+              </h2>
+              <div
+                id="collapseMoney"
+                className="accordion-collapse collapse"
+                aria-labelledby="headingMoney"
+              >
+                <div className="accordion-body">
+                  <MoneyDisplay />
                 </div>
+              </div>
+            </div>
 
-                <div className="accordion-item">
-                  <h2 className="accordion-header" id="headingThree">
-                    <button
-                      className="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseThree"
-                      aria-expanded="false"
-                      aria-controls="collapseThree"
-                    >
-                      Magic-user Spells
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseThree"
-                    className="accordion-collapse collapse"
-                    aria-labelledby="headingThree"
-                  >
-                    <div className="accordion-body">
-                      <div className="row">
-                        <MagicDisplay magicFilter="Mage" startingIndex={181} />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="accordion-item">
-                  <h2 className="accordion-header" id="headingFour">
-                    <button
-                      className="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseFour"
-                      aria-expanded="false"
-                      aria-controls="collapseFour"
-                    >
-                      Cleric Spells
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseFour"
-                    className="accordion-collapse collapse"
-                    aria-labelledby="headingFour"
-                  >
-                    <div className="accordion-body">
-                      <div className="row">
-                        <MagicDisplay magicFilter="Cleric" startingIndex={178} />
-                      </div>
-                    </div>
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="headingThree">
+                <button
+                  className="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  Magic-user Spells
+                </button>
+              </h2>
+              <div
+                id="collapseThree"
+                className="accordion-collapse collapse"
+                aria-labelledby="headingThree"
+              >
+                <div className="accordion-body">
+                  <div className="row">
+                    <MagicDisplay magicFilter="Mage" startingIndex={181} />
                   </div>
                 </div>
               </div>
-            </>
-          ) : null}
+            </div>
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="headingFour">
+                <button
+                  className="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFour"
+                  aria-expanded="false"
+                  aria-controls="collapseFour"
+                >
+                  Cleric Spells
+                </button>
+              </h2>
+              <div
+                id="collapseFour"
+                className="accordion-collapse collapse"
+                aria-labelledby="headingFour"
+              >
+                <div className="accordion-body">
+                  <div className="row">
+                    <MagicDisplay magicFilter="Cleric" startingIndex={178} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      ) : null}
 
-        
-        <div className="col-md-6">
-          <h3 style={{ textAlign: "center" }}>Inventory Editor</h3>
+      <div className="col-md-6">
+        <h3 style={{ textAlign: "center" }}>Inventory Editor</h3>
 
-          <PoolRadInventory
-            inventoryLoaded={inventoryLoaded}
-            setInventoryLoaded={setInventoryLoaded}
-          />
-        </div>
-      
+        <PoolRadInventory
+          inventoryLoaded={inventoryLoaded}
+          setInventoryLoaded={setInventoryLoaded}
+        />
+      </div>
+
       <div
         className="row g-1 d-flex justify-content-center"
         style={{ marginTop: "5vh", textAlign: "center" }}
