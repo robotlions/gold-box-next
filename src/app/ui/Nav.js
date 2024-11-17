@@ -46,8 +46,8 @@ const pathname = usePathname();
 
 
     return (
-        <ul className="flex justify-between">
-         <li key="Curse"><Link href="/"><h6 className="md:block">Curse of the Secret Pools!</h6></Link></li>
+        <ul className="flex justify-between items-center mx-5">
+         <li key="Curse"><Link href="/"><h6 style={{fontSize:"x-large"}}>Curse of the Secret Pools!</h6></Link></li>
         <LinkMap />
       </ul>
     )

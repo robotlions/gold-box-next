@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "IM-Fell";
+  src: url(./fonts/IMFellGreatPrimerSC-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Raleway-Medium";
+  src: url(./fonts/Raleway-Medium.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Raleway-Black";
+  src: url(./fonts/Raleway-Black.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Raleway-Bold";
+  src: url(./fonts/Raleway-Bold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Raleway-SemiBold";
+  src: url(./fonts/Raleway-SemiBold.ttf) format("truetype");
+}
+
+h6{
+  font-family: "IM-Fell", Arial, Helvetica, sans-serif;
+}
+
+h2{
+  font-family: "Raleway-Bold", Arial, Helvetica, sans-serif;
+  font-size: x-large;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -17,5 +48,5 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Raleway-Medium", Arial, Helvetica, sans-serif;
 }

@@ -22,7 +22,7 @@ export default function Home() {
           <div className="text-center" key={boxImage.name}>
             <Link href={boxImage.href}>
             <Image height={400} src={boxImage.image} alt={boxImage.alt}/>
-            <p>{boxImage.name}</p>
+            <h6>{boxImage.name}</h6>
             </Link>
           </div>
         )
@@ -31,8 +31,8 @@ export default function Home() {
   }
 
   return (
-    <div>
-      <h2 className="text-center" style={{ marginBottom: 20 }}>
+    <div className="mt-10">
+      <h2 className="text-center mb-10 font-bold">
         Online editor for the Advanced Dungeons and Dragons gold box games.
       </h2>
 
