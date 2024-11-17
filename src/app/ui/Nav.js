@@ -10,13 +10,13 @@ import Link from 'next/link';
 export default function Nav() {
 const pathname = usePathname();
   const links = [
-    { name: "Pool of Radiance", href: "/poolrad" },
+    { name: "Pool of Radiance", href: "/poolofradiance" },
     {
       name: "Curse of the Azure Bonds",
-      href: "/curse",
+      href: "/azurebonds",
     },
-    { name: "Secret of the Silver Blades", href: "/silver" },
-    {name: "Pools of Darkness", href: "/pod"},
+    { name: "Secret of the Silver Blades", href: "/silverblades" },
+    {name: "Pools of Darkness", href: "/poolsofdarkness"},
   ];
 
   function LinkMap() {
