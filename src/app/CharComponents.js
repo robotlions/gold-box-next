@@ -157,7 +157,7 @@ export const CharAbilityDisplay = (props) => {
 export const CharInfoDisplay = (props) => {
   return (
     <>
-      <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2">
         <div>
           Character Name:{" "}
           <CharFunctions.NameModule
@@ -190,7 +190,7 @@ export const CharInfoDisplay = (props) => {
           />
         </div>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2">
         <div>
           Class:{" "}
           <CharFunctions.SelectModule
@@ -320,59 +320,59 @@ export const CharSavesDisplay = (props) => {
         </em>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 ">
         <div>
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4 ">
             <div className="col-8">Paralyzation, Poison, Death Magic</div>
-            <div className="col-4">
+            
               <CharFunctions.ValueModule
                 dataArray={props.dataArray}
                 setDataArray={props.setDataArray}
                 dataArrayIndex={props.deathSaveIndex}
               />
-            </div>
+            
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4 ">
-            <div className="col-8">Petrification and Polymorph</div>
-            <div className="col-4">
+            <div>Petrification and Polymorph</div>
+            
               <CharFunctions.ValueModule
                 dataArray={props.dataArray}
                 setDataArray={props.setDataArray}
                 dataArrayIndex={props.petriPolySaveIndex}
               />
-            </div>
+            
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4 ">
-            <div className="col-8">Rod, Staff, Wand</div>
-            <div className="col-4">
+            <div>Rod, Staff, Wand</div>
+            
               <CharFunctions.ValueModule
                 dataArray={props.dataArray}
                 setDataArray={props.setDataArray}
                 dataArrayIndex={props.rodStaffWandSaveIndex}
               />
-            </div>
+            
           </div>
         </div>
         <div>
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4 ">
-            <div className="col-8">Breath Weapon</div>
-            <div className="col-4">
+            <div>Breath Weapon</div>
+            
               <CharFunctions.ValueModule
                 dataArray={props.dataArray}
                 setDataArray={props.setDataArray}
                 dataArrayIndex={props.breathWeaponSaveIndex}
               />
-            </div>
+            
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4 ">
-            <div className="col-8">Spell</div>
-            <div className="col-4">
+            <div>Spell</div>
+            
               <CharFunctions.ValueModule
                 dataArray={props.dataArray}
                 setDataArray={props.setDataArray}
                 dataArrayIndex={props.spellSaveIndex}
               />
-            </div>
+            
           </div>
         </div>
       </div>
@@ -391,9 +391,8 @@ export const ThiefSkillsDisplay = (props) => {
         </em>
       </div>
 
-      <div className="flex">
-        <div className="grid grid-cols-3 gap-10">
-        <div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 ">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4 ">
           <div>Pick Pockets</div>
           <div>
             <CharFunctions.ValueModule
@@ -403,7 +402,7 @@ export const ThiefSkillsDisplay = (props) => {
             />
           </div>
         </div>
-        <div>
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4 ">
           <div className="col-8">Open Locks</div>
           <div className="col-4">
             <CharFunctions.ValueModule
@@ -413,7 +412,7 @@ export const ThiefSkillsDisplay = (props) => {
             />
           </div>
         </div>
-        <div>
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4 ">
           <div className="col-8">Find/Remove Traps</div>
           <div className="col-4">
             <CharFunctions.ValueModule
@@ -423,7 +422,7 @@ export const ThiefSkillsDisplay = (props) => {
             />
           </div>
         </div>
-        <div>
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4 ">
           <div className="col-8">Move Silently</div>
           <div className="col-4">
             <CharFunctions.ValueModule
@@ -433,50 +432,50 @@ export const ThiefSkillsDisplay = (props) => {
             />
           </div>
         </div>
-      
 
-      <div>
-        <div className="col-8">Hide in Shadows</div>
-        <div className="col-4">
-          <CharFunctions.ValueModule
-            dataArray={props.dataArray}
-            setDataArray={props.setDataArray}
-            dataArrayIndex={props.hideInShadowsIndex}
-          />
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4 ">
+          <div className="col-8">Hide in Shadows</div>
+          <div className="col-4">
+            <CharFunctions.ValueModule
+              dataArray={props.dataArray}
+              setDataArray={props.setDataArray}
+              dataArrayIndex={props.hideInShadowsIndex}
+            />
+          </div>
         </div>
-      </div>
-      <div className="row">
-        <div className="col-8">Hear Noise</div>
-        <div className="col-4">
-          <CharFunctions.ValueModule
-            dataArray={props.dataArray}
-            setDataArray={props.setDataArray}
-            dataArrayIndex={props.hearNoiseIndex}
-          />
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4 ">
+          
+            <div className="col-8">Hear Noise</div>
+            <div className="col-4">
+              <CharFunctions.ValueModule
+                dataArray={props.dataArray}
+                setDataArray={props.setDataArray}
+                dataArrayIndex={props.hearNoiseIndex}
+              />
+            </div>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4 ">
+            <div className="col-8">Climb Walls</div>
+            <div className="col-4">
+              <CharFunctions.ValueModule
+                dataArray={props.dataArray}
+                setDataArray={props.setDataArray}
+                dataArrayIndex={props.climbWallsIndex}
+              />
+            </div>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4 ">
+            <div className="col-8">Read Languages</div>
+            <div className="col-4">
+              <CharFunctions.ValueModule
+                dataArray={props.dataArray}
+                setDataArray={props.setDataArray}
+                dataArrayIndex={props.readLanguagesIndex}
+              />
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="row">
-        <div className="col-8">Climb Walls</div>
-        <div className="col-4">
-          <CharFunctions.ValueModule
-            dataArray={props.dataArray}
-            setDataArray={props.setDataArray}
-            dataArrayIndex={props.climbWallsIndex}
-          />
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-8">Read Languages</div>
-        <div className="col-4">
-          <CharFunctions.ValueModule
-            dataArray={props.dataArray}
-            setDataArray={props.setDataArray}
-            dataArrayIndex={props.readLanguagesIndex}
-          />
-        </div>
-      </div>
-      </div>
-      </div>
+      
     </>
   );
 };

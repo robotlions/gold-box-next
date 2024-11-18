@@ -251,7 +251,7 @@ export default function PoolRadMain() {
           <h3 style={{ textAlign: "center" }}>Character Editor</h3>
           <div className="mb-3">
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="file"
               id="fileSelect"
               accept=".sav"

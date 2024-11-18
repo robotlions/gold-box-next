@@ -188,9 +188,9 @@ export function SelectModule(props) {
   let defaultDisplay = tempArray[props.index];
 
   return (
-    <div className="d-flex">
+    
       <select
-        className="form-select"
+        className="w-auto"
         defaultValue={defaultDisplay}
         aria-label="Item value dropdown"
         onChange={(e) => {
@@ -203,7 +203,7 @@ export function SelectModule(props) {
         </option>
         {dropList}
       </select>
-    </div>
+    
   );
 }
 
@@ -225,7 +225,7 @@ export function SpellModule(props) {
   );
 
   return (
-    <div style={{ marginBottom: 10 }} className="d-flex flex-wrap">
+    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4">
       {spellDisplay}
     </div>
   );
@@ -243,7 +243,7 @@ export function SpellCheckBox(props) {
   }
 
   return (
-    <div className="col-6 col-md-3 spellEntry">
+    <div className="flex">
       <input
         className="form-check-input"
         type="checkbox"
@@ -324,7 +324,7 @@ export function ValueModule(props) {
 
   const editDisplay = (
     <input
-    className="w-40"
+    className="w-20"
       type="number"
       max="255"
       min="0"
