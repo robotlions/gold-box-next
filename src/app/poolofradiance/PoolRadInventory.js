@@ -65,11 +65,12 @@ export default function PoolRadInventory(props) {
 
   return (
     <>
-      <div className="row" style={{ minHeight: 40 }}>
+      <div>
         <div className="col-md">
           <div className="mb-3">
             <input
-              className="form-control"
+              className="shadow w-full appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+
               type="file"
               id="inventoryFileSelect"
               accept=".itm"

@@ -119,7 +119,7 @@ export function NameModule(props) {
   const [inputText, setInputText] = useState(defaultName);
   const editDisplay = (
     <input
-      className="form-control"
+      className="w-auto"
       value={inputText}
       maxLength={15}
       onChange={(e) => setInputText(e.target.value)}
@@ -225,7 +225,7 @@ export function SpellModule(props) {
   );
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4">
+    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-1">
       {spellDisplay}
     </div>
   );
@@ -280,8 +280,9 @@ export function StrengthModule(props) {
 
   const editDisplay = (
     <div className="flex">
-      <div className="w-20">
+      <div>
         <input
+        className="w-20"
           type="number"
           max="99"
           min="0"
@@ -294,6 +295,7 @@ export function StrengthModule(props) {
       <div className="w-20">
         {parseInt(inputText) === 18 ? (
           <input
+          className="w-20"
             type="number"
             max="100"
             min="0"

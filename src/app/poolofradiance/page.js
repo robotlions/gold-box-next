@@ -141,7 +141,7 @@ export default function PoolRadMain() {
     let spellArray = [0, 1, 2];
 
     let spellSlots = spellArray.map((item, index) => (
-      <div key={index} className="col-6 col-md-2">
+      <div key={index}>
         {item + 1}:{" "}
         <CharFunctions.LevelModule
           dataArray={dataArray}
@@ -153,7 +153,7 @@ export default function PoolRadMain() {
 
     return (
       <>
-        {spellSlots}
+        <div className="flex gap-3">{spellSlots}</div>
         <h4>{props.magicFilter} Spells:</h4>{" "}
         <div>
           <CharFunctions.SpellModule
@@ -233,25 +233,24 @@ export default function PoolRadMain() {
     );
 
   return (
-    <div className="charEditBody">
-      <div className="row">
-        <div className="col-md-12 gx-0">
-          <img
-            style={{ width: "100%" }}
-            src={poolRadBanner}
-            alt="pool of radiance orignal title screen"
-          />
-          <h2 className="mainTitle">
-            Advanced Dungeons and Dragons: Pool of Radiance
-          </h2>
-        </div>
+    <>
+      <div className="mb-20">
+        <Image
+          className="w-full"
+          src={poolRadBanner}
+          alt="pool of radiance orignal title screen"
+        />
+        <h2 className="text-center text-3xl mt-10">
+          Advanced Dungeons and Dragons: Pool of Radiance
+        </h2>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <h3 style={{ textAlign: "center" }}>Character Editor</h3>
+
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-15 mx-5">
+        <div className="w-11/12">
+          <h3 className="text-center">Character Editor</h3>
           <div className="mb-3">
             <input
-              className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow w-full appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="file"
               id="fileSelect"
               accept=".sav"
@@ -264,7 +263,7 @@ export default function PoolRadMain() {
           </div>
           {dataArray ? (
             <button
-              className="btn downloadButton"
+              className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
               onClick={() => exportSaveFile()}
             >
               Download Character File
@@ -317,7 +316,7 @@ export default function PoolRadMain() {
           ) : null}
         </div>
 
-        <div>
+        <div className="w-11/12">
           <h3 style={{ textAlign: "center" }}>Inventory Editor</h3>
 
           <PoolRadInventory
@@ -332,6 +331,6 @@ export default function PoolRadMain() {
       >
         <div className="col-md-auto">{splashImage}</div>
       </div>
-    </div>
+    </>
   );
 }

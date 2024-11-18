@@ -74,7 +74,7 @@ export function ItemEditModule(props) {
     return (
       <>
         <select
-          className="form-select"
+          className="w-11/12"
           defaultValue={defaultDisplay}
           aria-label="Item value dropdown"
           onChange={(e) => {
@@ -91,50 +91,41 @@ export function ItemEditModule(props) {
   }
 
   const mainDisplay = (
-    <div className="accordion" id="inventoryAccordion">
-      <div className="accordion-item">
-        <h2 className="accordion-header" id={`heading${props.index}`}>
-          <button
-            className="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target={`#collapse${props.index}`}
-            aria-expanded="true"
-            aria-controls={`collapse${props.index}`}
-          >
+    
+      <>
+        <h2 id={`heading${props.index}`}>
+          
             <div className="col-md-8">
               <h6>
               {ammo > 0 ? ammo : null} {displayName1} {displayName2} {displayName3}
               </h6>
             </div>
-          </button>
+         
         </h2>
         <div
-          id={`collapse${props.index}`}
-          className="accordion-collapse collapse"
-          aria-labelledby={`heading${props.index}`}
+          
         >
-          <div className="accordion-body">
+          
             <>
-              <div className="row">
-                <div className="col-6 col-md-auto inventoryText">
-                  Type:{" "}
+              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3">
+              <div className="grid grid-cols-2">
+                  <div>Type:</div>
                   <ValueModule
                     value={
                       parseInt(Object.keys(props.loadedItem)) + props.typeIndex
                     }
                   />
                 </div>
-                <div className="col-6 col-md-auto inventoryText">
-                  Bonus:{" "}
+                <div className="grid grid-cols-2">
+                  <div>Bonus:</div>
                   <ValueModule
                     value={
                       parseInt(Object.keys(props.loadedItem)) + props.bonusIndex
                     }
                   />
                 </div>
-                <div className="col-6 col-md-auto inventoryText">
-                  Effect1(Charges):{" "}
+                <div className="grid grid-cols-2">
+                  <div>Effect1(Charges):</div>
                   <ValueModule
                     value={
                       parseInt(Object.keys(props.loadedItem)) +
@@ -142,8 +133,8 @@ export function ItemEditModule(props) {
                     }
                   />
                 </div>
-                <div className="col-6 col-md-auto inventoryText">
-                  Effect2:{" "}
+                <div className="grid grid-cols-2">
+                  <div>Effect2:</div>
                   <ValueModule
                     value={
                       parseInt(Object.keys(props.loadedItem)) +
@@ -151,8 +142,8 @@ export function ItemEditModule(props) {
                     }
                   />
                 </div>
-                <div className="col-6 col-md-auto inventoryText">
-                  Effect3:{" "}
+                <div className="grid grid-cols-2">
+                  <div>Effect3:</div>
                   <ValueModule
                     value={
                       parseInt(Object.keys(props.loadedItem)) +
@@ -160,8 +151,8 @@ export function ItemEditModule(props) {
                     }
                   />
                 </div>
-                {tempArray[parseInt(Object.keys(props.loadedItem)) + props.ammoIndex] > 0 ? <div className="col-6 col-md-auto inventoryText">
-                  Ammo:{" "}
+                {tempArray[parseInt(Object.keys(props.loadedItem)) + props.ammoIndex] > 0 ?  <div className="grid grid-cols-2">
+                  <div>Ammo:</div>
                   <ValueModule
                     value={
                       parseInt(Object.keys(props.loadedItem)) + props.ammoIndex
@@ -170,8 +161,8 @@ export function ItemEditModule(props) {
                 </div> : null}
               </div>
               <div style={{ marginTop: 20 }} className="row">
-                <div className="col-6 col-md-auto inventoryText">
-                  Weight:{" "}
+              <div className="grid grid-cols-2">
+                 <div>Weight:</div>
                   <ItemWeightModule
                     value={
                       parseInt(Object.keys(props.loadedItem)) +
@@ -186,8 +177,8 @@ export function ItemEditModule(props) {
                 <h5 style={{ textAlign: "center" }}>Rename</h5>
               </div>
 
-              <div className="row">
-                <div className="col-4">
+              <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3">
+                <div>
                   <NameSelect
                     setDataArray={props.setDataArray}
                     dataList={props.dataList}
@@ -197,7 +188,7 @@ export function ItemEditModule(props) {
                     }
                   />
                 </div>
-                <div className="col-4">
+                <div>
                   <NameSelect
                     setDataArray={props.setDataArray}
                     dataList={props.dataList}
@@ -207,7 +198,7 @@ export function ItemEditModule(props) {
                     }
                   />
                 </div>
-                <div className="col-4">
+                <div>
                   <NameSelect
                     setDataArray={props.setDataArray}
                     dataList={props.dataList}
@@ -218,21 +209,15 @@ export function ItemEditModule(props) {
                 </div>
               </div>
               <div
-                className="row d-flex flex-row-reverse"
+                className="grid grid-cols-2"
                 style={{ marginTop: 10 }}
               >
                 <button
-                  className="btn downloadButton editButton"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target={`#collapse${props.index}`}
-                  aria-expanded="true"
-                  aria-controls={`collapse${props.index}`}
+                  
                 >
                   Done Editing
                 </button>
                 <button
-                  className="btn editButton duplicateButton"
                   onClick={() => props.duplicateItem(props.item)}
                   style={{marginRight:30}}
                 >
@@ -240,10 +225,10 @@ export function ItemEditModule(props) {
                 </button>
               </div>
             </>
-          </div>
+          
         </div>
-      </div>
-    </div>
+     </>
+    
   );
 
   return mainDisplay;
@@ -327,6 +312,7 @@ export function ItemWeightModule(props) {
 
   const editDisplay = (
     <input
+    className="w-20"
       type="text"
       style={{ maxWidth: "100%" }}
       value={inputText}
