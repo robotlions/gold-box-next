@@ -68,7 +68,7 @@ export function HitPointModule(props) {
 
   const editDisplay = (
     <input
-      className="form-control"
+      
       type="number"
       max="255"
       min="0"
@@ -324,13 +324,13 @@ export function ValueModule(props) {
 
   const editDisplay = (
     <input
+    className="w-40"
       type="number"
       max="255"
       min="0"
       value={inputText}
       onChange={(e) => setInputText(e.target.value)}
       onBlur={() => submitChange()}
-      style={{ maxWidth: "70%", textAlign: "center" }}
     />
   );
 

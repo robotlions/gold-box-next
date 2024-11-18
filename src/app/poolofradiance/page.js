@@ -246,7 +246,7 @@ export default function PoolRadMain() {
           </h2>
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <h3 style={{ textAlign: "center" }}>Character Editor</h3>
           <div className="mb-3">
