@@ -5,12 +5,11 @@ import { genders, alignments } from "./poolofradiance/PoolRadData";
 export const CharAbilityDisplay = (props) => {
   return (
     <>
-      <div className="row">
-        <div className="col-md-6">
-          <h4 style={{ textAlign: "center" }}>Ability Scores</h4>
-          <div className="row">
-            <div className="col-4">Strength:</div>
-
+      <h4>Ability Scores</h4>
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4">
+        <div>
+          <div>
+            Strength:
             <CharFunctions.StrengthModule
               idText="strengthScore"
               dataArray={props.dataArray}
@@ -21,127 +20,122 @@ export const CharAbilityDisplay = (props) => {
               dataArrayIndexCurrent={props.strIndexCurrent}
             />
           </div>
-          <div className="row">
-            <div className="col-4">Intelligence:</div>
-            <div className="col-4">
-              <CharFunctions.ScoreModule
-                dataArray={props.dataArray}
-                setDataArray={props.setDataArray}
-                dataArrayIndex={props.intIndex}
-                dataArrayIndexCurrent={props.intIndexCurrent}
-              />
-            </div>
+
+          <div>
+            Intelligence:
+            <CharFunctions.ScoreModule
+              dataArray={props.dataArray}
+              setDataArray={props.setDataArray}
+              dataArrayIndex={props.intIndex}
+              dataArrayIndexCurrent={props.intIndexCurrent}
+            />
           </div>
-          <div className="row">
-            <div className="col-4">Wisdom:</div>
-            <div className="col-4">
-              <CharFunctions.ScoreModule
-                dataArray={props.dataArray}
-                setDataArray={props.setDataArray}
-                dataArrayIndex={props.wisIndex}
-                dataArrayIndexCurrent={props.wisIndexCurrent}
-              />
-            </div>
+
+          <div className="col-4">
+            Wisdom:
+            <CharFunctions.ScoreModule
+              dataArray={props.dataArray}
+              setDataArray={props.setDataArray}
+              dataArrayIndex={props.wisIndex}
+              dataArrayIndexCurrent={props.wisIndexCurrent}
+            />
           </div>
-          <div className="row">
-            <div className="col-4">Dexterity:</div>
-            <div className="col-4">
-              <CharFunctions.ScoreModule
-                dataArray={props.dataArray}
-                setDataArray={props.setDataArray}
-                dataArrayIndex={props.dexIndex}
-                dataArrayIndexCurrent={props.dexIndexCurrent}
-              />
-            </div>
+
+          <div className="col-4">
+            Dexterity:
+            <CharFunctions.ScoreModule
+              dataArray={props.dataArray}
+              setDataArray={props.setDataArray}
+              dataArrayIndex={props.dexIndex}
+              dataArrayIndexCurrent={props.dexIndexCurrent}
+            />
           </div>
-          <div className="row">
-            <div className="col-4">Constitution:</div>
-            <div className="col-4">
-              <CharFunctions.ScoreModule
-                dataArray={props.dataArray}
-                setDataArray={props.setDataArray}
-                dataArrayIndex={props.conIndex}
-                dataArrayIndexCurrent={props.conIndexCurrent}
-              />
-            </div>
+
+          <div className="col-4">
+            Constitution:
+            <CharFunctions.ScoreModule
+              dataArray={props.dataArray}
+              setDataArray={props.setDataArray}
+              dataArrayIndex={props.conIndex}
+              dataArrayIndexCurrent={props.conIndexCurrent}
+            />
           </div>
-          <div className="row">
-            <div className="col-4">Charisma:</div>
-            <div className="col-4">
-              <CharFunctions.ScoreModule
-                dataArray={props.dataArray}
-                setDataArray={props.setDataArray}
-                dataArrayIndex={props.chaIndex}
-                dataArrayIndexCurrent={props.chaIndexCurrent}
-              />
-            </div>
+
+          <div className="col-4">
+            Charisma:
+            <CharFunctions.ScoreModule
+              dataArray={props.dataArray}
+              setDataArray={props.setDataArray}
+              dataArrayIndex={props.chaIndex}
+              dataArrayIndexCurrent={props.chaIndexCurrent}
+            />
           </div>
         </div>
-        <div className="col-md-6">
-          <h4 style={{ textAlign: "center" }}>Levels</h4>
+      </div>
+      <div className="col-md-6">
+        <h4 style={{ textAlign: "center" }}>Levels</h4>
+        <div className="row">
+          <div className="col-6">Cleric: </div>
+          <div className="col-6">
+            <CharFunctions.LevelModule
+              dataArray={props.dataArray}
+              setDataArray={props.setDataArray}
+              dataArrayIndex={props.clericIndex}
+            />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-6">Fighter: </div>
+          <div className="col-6">
+            <CharFunctions.LevelModule
+              dataArray={props.dataArray}
+              setDataArray={props.setDataArray}
+              dataArrayIndex={props.fighterIndex}
+            />
+          </div>
+        </div>
+        {props.paladinIndex && (
           <div className="row">
-            <div className="col-6">Cleric: </div>
+            <div className="col-6">Paladin: </div>
             <div className="col-6">
               <CharFunctions.LevelModule
                 dataArray={props.dataArray}
                 setDataArray={props.setDataArray}
-                dataArrayIndex={props.clericIndex}
+                dataArrayIndex={props.paladinIndex}
               />
             </div>
           </div>
+        )}
+        {props.rangerIndex && (
           <div className="row">
-            <div className="col-6">Fighter: </div>
+            <div className="col-6">Ranger: </div>
             <div className="col-6">
               <CharFunctions.LevelModule
                 dataArray={props.dataArray}
                 setDataArray={props.setDataArray}
-                dataArrayIndex={props.fighterIndex}
+                dataArrayIndex={props.rangerIndex}
               />
             </div>
           </div>
-          {props.paladinIndex && (
-            <div className="row">
-              <div className="col-6">Paladin: </div>
-              <div className="col-6">
-                <CharFunctions.LevelModule
-                  dataArray={props.dataArray}
-                  setDataArray={props.setDataArray}
-                  dataArrayIndex={props.paladinIndex}
-                />
-              </div>
-            </div>
-          )}
-          {props.rangerIndex && (
-            <div className="row">
-              <div className="col-6">Ranger: </div>
-              <div className="col-6">
-                <CharFunctions.LevelModule
-                  dataArray={props.dataArray}
-                  setDataArray={props.setDataArray}
-                  dataArrayIndex={props.rangerIndex}
-                />
-              </div>
-            </div>
-          )}
-          <div className="row">
-            <div className="col-6">Magic-User: </div>
-            <div className="col-6">
-              <CharFunctions.LevelModule
-                dataArray={props.dataArray}
-                setDataArray={props.setDataArray}
-                dataArrayIndex={props.magicUserIndex}
-              />
-            </div>
+        )}
+        <div className="row">
+          <div className="col-6">Magic-User: </div>
+          <div className="col-6">
+            <CharFunctions.LevelModule
+              dataArray={props.dataArray}
+              setDataArray={props.setDataArray}
+              dataArrayIndex={props.magicUserIndex}
+            />
           </div>
-          <div className="row">
-            <div className="col-6">Thief: </div>
-            <div className="col-6">
-              <CharFunctions.LevelModule
-                dataArray={props.dataArray}
-                setDataArray={props.setDataArray}
-                dataArrayIndex={props.thiefIndex}
-              />
-            </div>
+        </div>
+        <div className="row">
+          <div className="col-6">Thief: </div>
+          <div className="col-6">
+            <CharFunctions.LevelModule
+              dataArray={props.dataArray}
+              setDataArray={props.setDataArray}
+              dataArrayIndex={props.thiefIndex}
+            />
           </div>
         </div>
       </div>
@@ -152,15 +146,15 @@ export const CharAbilityDisplay = (props) => {
 export const CharInfoDisplay = (props) => {
   return (
     <>
-      <div className="row">
-        <div className="col-md-3">
+      <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 gap-4 ">
+        <div>
           Character Name:{" "}
           <CharFunctions.NameModule
             dataArray={props.dataArray}
             setDataArray={props.setDataArray}
           />
         </div>
-        <div className="col-md-3">
+        <div>
           Max HP:{" "}
           <CharFunctions.HitPointModule
             dataArray={props.dataArray}
@@ -168,7 +162,7 @@ export const CharInfoDisplay = (props) => {
             dataArrayIndex={props.maxHPIndex}
           />
         </div>
-        <div className="col-md-3">
+        <div>
           Current HP:{" "}
           <CharFunctions.HitPointModule
             dataArray={props.dataArray}
@@ -185,8 +179,8 @@ export const CharInfoDisplay = (props) => {
           />
         </div>
       </div>
-      <div className="row">
-        <div className="col-md-6">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4 ">
+        <div>
           Class:{" "}
           <CharFunctions.SelectModule
             dataArray={props.dataArray}
@@ -195,7 +189,7 @@ export const CharInfoDisplay = (props) => {
             dataList={props.classList}
           />
         </div>
-        <div className="col-md-6">
+        <div>
           Alignment:{" "}
           <CharFunctions.SelectModule
             dataArray={props.dataArray}
@@ -205,8 +199,8 @@ export const CharInfoDisplay = (props) => {
           />
         </div>
       </div>
-      <div className="row">
-        <div className="col-md-3">
+      <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 gap-4 ">
+        <div>
           Status:{" "}
           <CharFunctions.SelectModule
             dataArray={props.dataArray}
@@ -216,7 +210,7 @@ export const CharInfoDisplay = (props) => {
           />
         </div>
 
-        <div className="col-md-3">
+        <div>
           Race:{" "}
           <CharFunctions.SelectModule
             dataArray={props.dataArray}
@@ -225,7 +219,7 @@ export const CharInfoDisplay = (props) => {
             dataList={props.racesList}
           />
         </div>
-        <div className="col-md-3">
+        <div>
           Gender:{" "}
           <CharFunctions.SelectModule
             dataArray={props.dataArray}
@@ -307,8 +301,12 @@ export const CharMoneyComponent = (props) => {
 export const CharSavesDisplay = (props) => {
   return (
     <>
-      <div className="row" style={{textAlign:"center",marginBottom:20}}>
-        <em>These values are auto-generated by the gold box engine based on the original AD&D tables. Although you can edit these, the game will automatically reset them on load.</em>
+      <div className="row" style={{ textAlign: "center", marginBottom: 20 }}>
+        <em>
+          These values are auto-generated by the gold box engine based on the
+          original AD&D tables. Although you can edit these, the game will
+          automatically reset them on load.
+        </em>
       </div>
       <div className="row">
         <div className="col-md-6">
@@ -373,8 +371,12 @@ export const CharSavesDisplay = (props) => {
 export const ThiefSkillsDisplay = (props) => {
   return (
     <>
-       <div className="row" style={{textAlign:"center",marginBottom:20}}>
-        <em>These values are auto-generated by the gold box engine based on the original AD&D tables. Although you can edit these, the game will automatically reset them on load.</em>
+      <div className="row" style={{ textAlign: "center", marginBottom: 20 }}>
+        <em>
+          These values are auto-generated by the gold box engine based on the
+          original AD&D tables. Although you can edit these, the game will
+          automatically reset them on load.
+        </em>
       </div>
       <div className="row">
         <div className="col-md-6">

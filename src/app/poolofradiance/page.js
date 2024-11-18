@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 // import "bootstrap/dist/css/bootstrap.css";
-// import "bootstrap/dist/js/bootstrap";
+// import "bootstrap/dist/js/bootstrap.js";
 import Image from "next/image";
 import {
   poolRadStatusCodes,
@@ -201,33 +201,34 @@ export default function PoolRadMain() {
           .
         </h6>
 
-        <div className="flex justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 justify-items-center md:mx-10">
           <Image
-            height={200}
-            style={{ width: "auto" }}
+            className="coverImage"
             src={poolRadCoverImage}
             alt="pool of radiance"
-          />
-
-          <Image
             height={200}
             style={{ width: "auto" }}
+          />
+          <Image
+            className="coverImageFaded"
             src={azureCoverImage}
             alt="curse of the azure bonds"
-          />
-
-          <Image
             height={200}
             style={{ width: "auto" }}
+          />
+          <Image
+            className="coverImageFaded"
             src={silverBladesCoverImage}
             alt="secret of the silver blades"
-          />
-
-          <Image
             height={200}
             style={{ width: "auto" }}
+          />
+          <Image
+            className="coverImageFaded"
             src={podCoverImage}
             alt="pools of darkness"
+            height={200}
+            style={{ width: "auto" }}
           />
         </div>
       </>
@@ -235,217 +236,98 @@ export default function PoolRadMain() {
 
   return (
     <div className="charEditBody">
-      <Image src={poolRadBanner} alt="pool of radiance orignal title screen" />
-      <h2 className="mainTitle">
-        Advanced Dungeons and Dragons: Pool of Radiance
-      </h2>
-
-      <h3 style={{ textAlign: "center" }}>Character Editor</h3>
-      <div className="mb-3">
-        <input
-          className="form-control"
-          type="file"
-          id="fileSelect"
-          accept=".sav"
-          onChange={(e) => {
-            // createInventoryFile(e);
-            setSelectedFile(e.target.files[0]);
-            loadFile(e.target.files[0]);
-          }}
-        />
+      <div className="row">
+        <div className="col-md-12 gx-0">
+          <img
+            style={{ width: "100%" }}
+            src={poolRadBanner}
+            alt="pool of radiance orignal title screen"
+          />
+          <h2 className="mainTitle">
+            Advanced Dungeons and Dragons: Pool of Radiance
+          </h2>
+        </div>
       </div>
-      {dataArray ? (
-        <button className="btn downloadButton" onClick={() => exportSaveFile()}>
-          Download Character File
-        </button>
-      ) : null}
-      <br />
-      <p></p>
-      {dataArray ? (
-        <>
-          <div className="accordion" id="charEditAccordion">
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="headingOne">
-                <button
-                  className="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne"
-                  aria-expanded="true"
-                  aria-controls="collapseOne"
-                >
-                  Character Info
-                </button>
-              </h2>
-              <div
-                id="collapseOne"
-                className="accordion-collapse collapse show"
-                aria-labelledby="headingOne"
-              >
-                <div className="accordion-body">
-                  <CharInfoDisplay />
-                </div>
-              </div>
-            </div>
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="headingTwo">
-                <button
-                  className="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwo"
-                  aria-expanded="true"
-                  aria-controls="collapseTwo"
-                >
-                  Ability Scores and Levels
-                </button>
-              </h2>
-              <div
-                id="collapseTwo"
-                className="accordion-collapse collapse show"
-                aria-labelledby="headingTwo"
-              >
-                <div className="accordion-body">
-                  <CharAbilityDisplay />
-                </div>
-              </div>
-            </div>
-
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="headingSaves">
-                <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseSaves"
-                  aria-expanded="true"
-                  aria-controls="collapseSaves"
-                >
-                  Saving Throws
-                </button>
-              </h2>
-              <div
-                id="collapseSaves"
-                className="accordion-collapse collapse"
-                aria-labelledby="headingSaves"
-              >
-                <div className="accordion-body">
-                  <CharSavesDisplay />
-                </div>
-              </div>
-            </div>
-
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="headingThief">
-                <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseThief"
-                  aria-expanded="true"
-                  aria-controls="collapseThief"
-                >
-                  Thief Skills
-                </button>
-              </h2>
-              <div
-                id="collapseThief"
-                className="accordion-collapse collapse"
-                aria-labelledby="headingThief"
-              >
-                <div className="accordion-body">
-                  <ThiefSkillsDisplay />
-                </div>
-              </div>
-            </div>
-
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="headingMoney">
-                <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseMoney"
-                  aria-expanded="true"
-                  aria-controls="collapseMoney"
-                >
-                  Money
-                </button>
-              </h2>
-              <div
-                id="collapseMoney"
-                className="accordion-collapse collapse"
-                aria-labelledby="headingMoney"
-              >
-                <div className="accordion-body">
-                  <MoneyDisplay />
-                </div>
-              </div>
-            </div>
-
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="headingThree">
-                <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseThree"
-                  aria-expanded="false"
-                  aria-controls="collapseThree"
-                >
-                  Magic-user Spells
-                </button>
-              </h2>
-              <div
-                id="collapseThree"
-                className="accordion-collapse collapse"
-                aria-labelledby="headingThree"
-              >
-                <div className="accordion-body">
-                  <div className="row">
-                    <MagicDisplay magicFilter="Mage" startingIndex={181} />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="headingFour">
-                <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseFour"
-                  aria-expanded="false"
-                  aria-controls="collapseFour"
-                >
-                  Cleric Spells
-                </button>
-              </h2>
-              <div
-                id="collapseFour"
-                className="accordion-collapse collapse"
-                aria-labelledby="headingFour"
-              >
-                <div className="accordion-body">
-                  <div className="row">
-                    <MagicDisplay magicFilter="Cleric" startingIndex={178} />
-                  </div>
-                </div>
-              </div>
-            </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
+        <div>
+          <h3 style={{ textAlign: "center" }}>Character Editor</h3>
+          <div className="mb-3">
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              type="file"
+              id="fileSelect"
+              accept=".sav"
+              onChange={(e) => {
+                // createInventoryFile(e);
+                setSelectedFile(e.target.files[0]);
+                loadFile(e.target.files[0]);
+              }}
+            />
           </div>
-        </>
-      ) : null}
+          {dataArray ? (
+            <button
+              className="btn downloadButton"
+              onClick={() => exportSaveFile()}
+            >
+              Download Character File
+            </button>
+          ) : null}
+          <br />
+          <p></p>
+          {dataArray ? (
+            <>
+              <h2>Character Info</h2>
 
-      <div className="col-md-6">
-        <h3 style={{ textAlign: "center" }}>Inventory Editor</h3>
+              <div>
+                <CharInfoDisplay />
+              </div>
 
-        <PoolRadInventory
-          inventoryLoaded={inventoryLoaded}
-          setInventoryLoaded={setInventoryLoaded}
-        />
+              <h2>Ability Scores and Levels</h2>
+
+              <div>
+                <CharAbilityDisplay />
+              </div>
+
+              <h2>Saving Throws</h2>
+
+              <div>
+                <CharSavesDisplay />
+              </div>
+
+              <h2>Thief Skills</h2>
+              <div>
+                <ThiefSkillsDisplay />
+              </div>
+
+              <h2>Money</h2>
+              <div>
+                <MoneyDisplay />
+              </div>
+
+              <h2>Magic-user Spells</h2>
+
+              <div>
+                <MagicDisplay magicFilter="Mage" startingIndex={181} />
+              </div>
+
+              <h2>Cleric Spells</h2>
+
+              <div>
+                <MagicDisplay magicFilter="Cleric" startingIndex={178} />
+              </div>
+            </>
+          ) : null}
+        </div>
+
+        <div>
+          <h3 style={{ textAlign: "center" }}>Inventory Editor</h3>
+
+          <PoolRadInventory
+            inventoryLoaded={inventoryLoaded}
+            setInventoryLoaded={setInventoryLoaded}
+          />
+        </div>
       </div>
-
       <div
         className="row g-1 d-flex justify-content-center"
         style={{ marginTop: "5vh", textAlign: "center" }}
