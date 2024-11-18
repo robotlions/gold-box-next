@@ -245,7 +245,7 @@ export function SpellCheckBox(props) {
   return (
     <div className="flex">
       <input
-        className="form-check-input"
+        
         type="checkbox"
         checked={checked}
         onChange={() => {

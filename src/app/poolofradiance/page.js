@@ -141,7 +141,7 @@ export default function PoolRadMain() {
     let spellArray = [0, 1, 2];
 
     let spellSlots = spellArray.map((item, index) => (
-      <div key={index}>
+      <div key={index} className="mt-5">
         {item + 1}:{" "}
         <CharFunctions.LevelModule
           dataArray={dataArray}
@@ -154,7 +154,8 @@ export default function PoolRadMain() {
     return (
       <>
         <div className="flex gap-3">{spellSlots}</div>
-        <h4>{props.magicFilter} Spells:</h4>{" "}
+        <br/>
+        <h5>{props.magicFilter} Spells:</h5>{" "}
         <div>
           <CharFunctions.SpellModule
             dataArray={dataArray}
@@ -240,11 +241,10 @@ export default function PoolRadMain() {
           src={poolRadBanner}
           alt="pool of radiance orignal title screen"
         />
-        <h2 className="text-center text-3xl mt-10">
+        <h3 className="text-center text-3xl mt-10">
           Advanced Dungeons and Dragons: Pool of Radiance
-        </h2>
+        </h3>
       </div>
-
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-15 mx-5">
         <div className="w-11/12">
           <h3 className="text-center">Character Editor</h3>
@@ -270,44 +270,44 @@ export default function PoolRadMain() {
             </button>
           ) : null}
           <br />
-          <p></p>
+          <br/>
           {dataArray ? (
             <>
-              <h2>Character Info</h2>
+              <h3 className="infoPanelHeader">Character Info</h3>
 
               <div>
                 <CharInfoDisplay />
               </div>
-
-              <h2>Ability Scores and Levels</h2>
+<br/>
+              <h3 className="infoPanelHeader">Ability Scores and Levels</h3>
 
               <div>
                 <CharAbilityDisplay />
               </div>
-
-              <h2>Saving Throws</h2>
+<br/>
+              <h3 className="infoPanelHeader">Saving Throws</h3>
 
               <div>
                 <CharSavesDisplay />
               </div>
-
-              <h2>Thief Skills</h2>
+<br/>
+              <h3 className="infoPanelHeader">Thief Skills</h3>
               <div>
                 <ThiefSkillsDisplay />
               </div>
-
-              <h2>Money</h2>
+<br/>
+              <h3 className="infoPanelHeader">Money</h3>
               <div>
                 <MoneyDisplay />
               </div>
-
-              <h2>Magic-user Spells</h2>
+<br/>
+              <h3 className="infoPanelHeader">Magic-user Spells</h3>
 
               <div>
                 <MagicDisplay magicFilter="Mage" startingIndex={181} />
               </div>
-
-              <h2>Cleric Spells</h2>
+<br/>
+              <h3 className="infoPanelHeader">Cleric Spells</h3>
 
               <div>
                 <MagicDisplay magicFilter="Cleric" startingIndex={178} />
