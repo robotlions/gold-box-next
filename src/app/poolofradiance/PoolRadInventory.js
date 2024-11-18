@@ -82,12 +82,14 @@ export default function PoolRadInventory(props) {
           </div>
 
           {dataArray ? (
+            <div className="text-right">
             <button
-              className="btn downloadButton"
+              className="hover:text-white hover:bg-blue-500 hover:border-blue-500"
               onClick={() => exportSaveFile()}
             >
               Download Inventory File
             </button>
+            </div>
           ) : null}
         </div>
       </div>

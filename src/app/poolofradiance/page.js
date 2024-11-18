@@ -154,7 +154,7 @@ export default function PoolRadMain() {
     return (
       <>
         <div className="flex gap-3">{spellSlots}</div>
-        <br/>
+        <br />
         <h5>{props.magicFilter} Spells:</h5>{" "}
         <div>
           <CharFunctions.SpellModule
@@ -262,52 +262,55 @@ export default function PoolRadMain() {
             />
           </div>
           {dataArray ? (
+            <div className="text-right">
             <button
               className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
               onClick={() => exportSaveFile()}
             >
               Download Character File
             </button>
+            </div>
           ) : null}
           <br />
-          <br/>
+          <br />
           {dataArray ? (
             <>
-              <h3 className="infoPanelHeader">Character Info</h3>
+
+              <h3 className="infoPanelHeader drop-shadow-md">Character Info</h3>
 
               <div>
                 <CharInfoDisplay />
               </div>
-<br/>
-              <h3 className="infoPanelHeader">Ability Scores and Levels</h3>
+              <br />
+              <h3 className="infoPanelHeader drop-shadow-md">Ability Scores and Levels</h3>
 
               <div>
                 <CharAbilityDisplay />
               </div>
-<br/>
-              <h3 className="infoPanelHeader">Saving Throws</h3>
+              <br />
+              <h3 className="infoPanelHeader drop-shadow-md">Saving Throws</h3>
 
               <div>
                 <CharSavesDisplay />
               </div>
-<br/>
-              <h3 className="infoPanelHeader">Thief Skills</h3>
+              <br />
+              <h3 className="infoPanelHeader drop-shadow-md">Thief Skills</h3>
               <div>
                 <ThiefSkillsDisplay />
               </div>
-<br/>
-              <h3 className="infoPanelHeader">Money</h3>
+              <br />
+              <h3 className="infoPanelHeader drop-shadow-md">Money</h3>
               <div>
                 <MoneyDisplay />
               </div>
-<br/>
-              <h3 className="infoPanelHeader">Magic-user Spells</h3>
+              <br />
+              <h3 className="infoPanelHeader drop-shadow-md">Magic-user Spells</h3>
 
               <div>
                 <MagicDisplay magicFilter="Mage" startingIndex={181} />
               </div>
-<br/>
-              <h3 className="infoPanelHeader">Cleric Spells</h3>
+              <br />
+              <h3 className="infoPanelHeader drop-shadow-md">Cleric Spells</h3>
 
               <div>
                 <MagicDisplay magicFilter="Cleric" startingIndex={178} />

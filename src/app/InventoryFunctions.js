@@ -7,7 +7,7 @@ export function ItemEditModule(props) {
   const [displayName1, setDisplayName1] = useState("");
   const [displayName2, setDisplayName2] = useState("");
   const [displayName3, setDisplayName3] = useState("");
-  const [ammo, setAmmo] = useState("")
+  const [ammo, setAmmo] = useState("");
   const [updated, setUpdated] = useState(true);
 
   useEffect(() => {
@@ -32,12 +32,17 @@ export function ItemEditModule(props) {
         ]
       );
       setAmmo(
-        
-          tempArray[parseInt(Object.keys(props.loadedItem)) + props.ammoIndex]
-        
+        tempArray[parseInt(Object.keys(props.loadedItem)) + props.ammoIndex]
       );
     }
-  }, [tempArray, updated, props.dataList, props.loadedItem, props.nameIndex, props.ammoIndex]);
+  }, [
+    tempArray,
+    updated,
+    props.dataList,
+    props.loadedItem,
+    props.nameIndex,
+    props.ammoIndex,
+  ]);
 
   function ValueModule(props) {
     const [valueState, setValueState] = useState(tempArray[props.value]);
@@ -91,144 +96,104 @@ export function ItemEditModule(props) {
   }
 
   const mainDisplay = (
-    
-      <>
-        <h2 id={`heading${props.index}`}>
-          
-            <div className="col-md-8">
-              <h6>
-              {ammo > 0 ? ammo : null} {displayName1} {displayName2} {displayName3}
-              </h6>
-            </div>
-         
-        </h2>
-        <div
-          
-        >
-          
-            <>
-              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3">
-              <div className="grid grid-cols-2">
-                  <div>Type:</div>
-                  <ValueModule
-                    value={
-                      parseInt(Object.keys(props.loadedItem)) + props.typeIndex
-                    }
-                  />
-                </div>
-                <div className="grid grid-cols-2">
-                  <div>Bonus:</div>
-                  <ValueModule
-                    value={
-                      parseInt(Object.keys(props.loadedItem)) + props.bonusIndex
-                    }
-                  />
-                </div>
-                <div className="grid grid-cols-2">
-                  <div>Effect1(Charges):</div>
-                  <ValueModule
-                    value={
-                      parseInt(Object.keys(props.loadedItem)) +
-                      props.chargeIndex
-                    }
-                  />
-                </div>
-                <div className="grid grid-cols-2">
-                  <div>Effect2:</div>
-                  <ValueModule
-                    value={
-                      parseInt(Object.keys(props.loadedItem)) +
-                      props.effect2Index
-                    }
-                  />
-                </div>
-                <div className="grid grid-cols-2">
-                  <div>Effect3:</div>
-                  <ValueModule
-                    value={
-                      parseInt(Object.keys(props.loadedItem)) +
-                      props.effect3Index
-                    }
-                  />
-                </div>
-                {tempArray[parseInt(Object.keys(props.loadedItem)) + props.ammoIndex] > 0 ?  <div className="grid grid-cols-2">
-                  <div>Ammo:</div>
-                  <ValueModule
-                    value={
-                      parseInt(Object.keys(props.loadedItem)) + props.ammoIndex
-                    }
-                  />
-                </div> : null}
-              </div>
-              <div style={{ marginTop: 20 }} className="row">
-              <div className="grid grid-cols-2">
-                 <div>Weight:</div>
-                  <ItemWeightModule
-                    value={
-                      parseInt(Object.keys(props.loadedItem)) +
-                      props.weightIndex
-                    }
-                    dataArray={props.dataArray}
-                    setDataArray={props.setDataArray}
-                  />
-                </div>
-              </div>
-              <div style={{ marginTop: 20 }} className="row">
-                <h5 style={{ textAlign: "center" }}>Rename</h5>
-              </div>
+    <div className="mb-5">
+      <h3 className="infoPanelHeader drop-shadow-md">
+        {ammo > 0 ? ammo : null} {displayName1} {displayName2} {displayName3}
+      </h3>
 
-              <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3">
-                <div>
-                  <NameSelect
-                    setDataArray={props.setDataArray}
-                    dataList={props.dataList}
-                    value={
-                      parseInt(Object.keys(props.loadedItem)) +
-                      (props.nameIndex + 2)
-                    }
-                  />
-                </div>
-                <div>
-                  <NameSelect
-                    setDataArray={props.setDataArray}
-                    dataList={props.dataList}
-                    value={
-                      parseInt(Object.keys(props.loadedItem)) +
-                      (props.nameIndex + 1)
-                    }
-                  />
-                </div>
-                <div>
-                  <NameSelect
-                    setDataArray={props.setDataArray}
-                    dataList={props.dataList}
-                    value={
-                      parseInt(Object.keys(props.loadedItem)) + props.nameIndex
-                    }
-                  />
-                </div>
-              </div>
-              <div
-                className="grid grid-cols-2"
-                style={{ marginTop: 10 }}
-              >
-                <button
-                  
-                >
-                  Done Editing
-                </button>
-                <button
-                  onClick={() => props.duplicateItem(props.item)}
-                  style={{marginRight:30}}
-                >
-                  Duplicate Item
-                </button>
-              </div>
-            </>
-          
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 mt-5 mb-5 gap-4">
+        <div className="grid grid-cols-2">
+          <div>Type:</div>
+          <ValueModule
+            value={parseInt(Object.keys(props.loadedItem)) + props.typeIndex}
+          />
         </div>
-     </>
-    
+        <div className="grid grid-cols-2">
+          <div>Bonus:</div>
+          <ValueModule
+            value={parseInt(Object.keys(props.loadedItem)) + props.bonusIndex}
+          />
+        </div>
+        <div className="grid grid-cols-2">
+          <div>Effect1(Charges):</div>
+          <ValueModule
+            value={parseInt(Object.keys(props.loadedItem)) + props.chargeIndex}
+          />
+        </div>
+        <div className="grid grid-cols-2">
+          <div>Effect2:</div>
+          <ValueModule
+            value={parseInt(Object.keys(props.loadedItem)) + props.effect2Index}
+          />
+        </div>
+        <div className="grid grid-cols-2">
+          <div>Effect3:</div>
+          <ValueModule
+            value={parseInt(Object.keys(props.loadedItem)) + props.effect3Index}
+          />
+        </div>
+        <div className="grid grid-cols-2">
+          <div>Weight:</div>
+          <ItemWeightModule
+            value={parseInt(Object.keys(props.loadedItem)) + props.weightIndex}
+            dataArray={props.dataArray}
+            setDataArray={props.setDataArray}
+          />
+        </div>
+        {tempArray[parseInt(Object.keys(props.loadedItem)) + props.ammoIndex] >
+        0 ? (
+          <div className="grid grid-cols-2">
+            <div>Ammo:</div>
+            <ValueModule
+              value={parseInt(Object.keys(props.loadedItem)) + props.ammoIndex}
+            />
+          </div>
+        ) : null}
+      </div>
+      
+        
+      
+      <div style={{ marginTop: 20 }} className="row">
+        <h5>Rename</h5>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3">
+        <div>
+          <NameSelect
+            setDataArray={props.setDataArray}
+            dataList={props.dataList}
+            value={
+              parseInt(Object.keys(props.loadedItem)) + (props.nameIndex + 2)
+            }
+          />
+        </div>
+        <div>
+          <NameSelect
+            setDataArray={props.setDataArray}
+            dataList={props.dataList}
+            value={
+              parseInt(Object.keys(props.loadedItem)) + (props.nameIndex + 1)
+            }
+          />
+        </div>
+        <div>
+          <NameSelect
+            setDataArray={props.setDataArray}
+            dataList={props.dataList}
+            value={parseInt(Object.keys(props.loadedItem)) + props.nameIndex}
+          />
+        </div>
+      </div>
+      <div className="grid grid-cols-2" style={{ marginTop: 10 }}>
+        <button className="w-40 border-green-500 text-green-500 hover:bg-green-500 hover:text-white">Done Editing</button>
+        <button
+          onClick={() => props.duplicateItem(props.item)}
+          className="w-40 hover:text-white hover:bg-blue-400"
+        >
+          Duplicate Item
+        </button>
+      </div>
+    </div>
   );
 
   return mainDisplay;
@@ -312,7 +277,7 @@ export function ItemWeightModule(props) {
 
   const editDisplay = (
     <input
-    className="w-20"
+      className="w-20"
       type="text"
       style={{ maxWidth: "100%" }}
       value={inputText}
