@@ -8,72 +8,84 @@ export const CharAbilityDisplay = (props) => {
       <h4>Ability Scores</h4>
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4">
         <div>
-          <div>
-            Strength:
-            <CharFunctions.StrengthModule
-              idText="strengthScore"
-              dataArray={props.dataArray}
-              setDataArray={props.setDataArray}
-              extStrIndex={props.extStrIndex}
-              extStrIndexCurrent={props.extStrIndexCurrent}
-              dataArrayIndex={props.strIndex}
-              dataArrayIndexCurrent={props.strIndexCurrent}
-            />
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4">
+            <div>Strength:</div>
+            <div>
+              <CharFunctions.StrengthModule
+                idText="strengthScore"
+                dataArray={props.dataArray}
+                setDataArray={props.setDataArray}
+                extStrIndex={props.extStrIndex}
+                extStrIndexCurrent={props.extStrIndexCurrent}
+                dataArrayIndex={props.strIndex}
+                dataArrayIndexCurrent={props.strIndexCurrent}
+              />
+            </div>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4">
+            <div>Intelligence:</div>
+            <div>
+              <CharFunctions.ScoreModule
+                dataArray={props.dataArray}
+                setDataArray={props.setDataArray}
+                dataArrayIndex={props.intIndex}
+                dataArrayIndexCurrent={props.intIndexCurrent}
+              />
+            </div>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4">
+            <div>Wisdom:</div>
+            <div>
+              <CharFunctions.ScoreModule
+                dataArray={props.dataArray}
+                setDataArray={props.setDataArray}
+                dataArrayIndex={props.wisIndex}
+                dataArrayIndexCurrent={props.wisIndexCurrent}
+              />
+            </div>
           </div>
 
-          <div>
-            Intelligence:
-            <CharFunctions.ScoreModule
-              dataArray={props.dataArray}
-              setDataArray={props.setDataArray}
-              dataArrayIndex={props.intIndex}
-              dataArrayIndexCurrent={props.intIndexCurrent}
-            />
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4">
+            <div>Dexterity:</div>
+            <div>
+              <CharFunctions.ScoreModule
+                dataArray={props.dataArray}
+                setDataArray={props.setDataArray}
+                dataArrayIndex={props.dexIndex}
+                dataArrayIndexCurrent={props.dexIndexCurrent}
+              />
+            </div>
           </div>
 
-          <div className="col-4">
-            Wisdom:
-            <CharFunctions.ScoreModule
-              dataArray={props.dataArray}
-              setDataArray={props.setDataArray}
-              dataArrayIndex={props.wisIndex}
-              dataArrayIndexCurrent={props.wisIndexCurrent}
-            />
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4">
+            <div>Constitution:</div>
+            <div>
+              <CharFunctions.ScoreModule
+                dataArray={props.dataArray}
+                setDataArray={props.setDataArray}
+                dataArrayIndex={props.conIndex}
+                dataArrayIndexCurrent={props.conIndexCurrent}
+              />
+            </div>
           </div>
 
-          <div className="col-4">
-            Dexterity:
-            <CharFunctions.ScoreModule
-              dataArray={props.dataArray}
-              setDataArray={props.setDataArray}
-              dataArrayIndex={props.dexIndex}
-              dataArrayIndexCurrent={props.dexIndexCurrent}
-            />
-          </div>
-
-          <div className="col-4">
-            Constitution:
-            <CharFunctions.ScoreModule
-              dataArray={props.dataArray}
-              setDataArray={props.setDataArray}
-              dataArrayIndex={props.conIndex}
-              dataArrayIndexCurrent={props.conIndexCurrent}
-            />
-          </div>
-
-          <div className="col-4">
-            Charisma:
-            <CharFunctions.ScoreModule
-              dataArray={props.dataArray}
-              setDataArray={props.setDataArray}
-              dataArrayIndex={props.chaIndex}
-              dataArrayIndexCurrent={props.chaIndexCurrent}
-            />
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4">
+            <div>Charisma:</div>
+            <div>
+              <CharFunctions.ScoreModule
+                dataArray={props.dataArray}
+                setDataArray={props.setDataArray}
+                dataArrayIndex={props.chaIndex}
+                dataArrayIndexCurrent={props.chaIndexCurrent}
+              />
+            </div>
           </div>
         </div>
       </div>
-      <div className="col-md-6">
-        <h4 style={{ textAlign: "center" }}>Levels</h4>
+      <h4 style={{ textAlign: "center" }}>Levels</h4>
+      <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-4 gap-4">
+      
+        
         <div className="row">
           <div className="col-6">Cleric: </div>
           <div className="col-6">

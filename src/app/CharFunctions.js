@@ -98,7 +98,7 @@ export function LevelModule(props) {
 
   const editDisplay = (
     <input
-      style={{ maxWidth: "60%", textAlign: "center" }}
+      className="w-20"
       type="number"
       max="99"
       min="0"
@@ -169,7 +169,7 @@ export function ScoreModule(props) {
       value={inputText}
       onChange={(e) => setInputText(e.target.value)}
       onBlur={() => submitChange()}
-      style={{ maxWidth: "70%", textAlign: "center" }}
+      className="w-20"
     />
   );
 
@@ -279,8 +279,8 @@ export function StrengthModule(props) {
   }
 
   const editDisplay = (
-    <>
-      <div className="col-4">
+    <div className="flex">
+      <div className="w-20">
         <input
           type="number"
           max="99"
@@ -288,10 +288,10 @@ export function StrengthModule(props) {
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
           onBlur={() => submitChange()}
-          style={{ maxWidth: "70%", textAlign: "center" }}
+          
         />
       </div>
-      <div className="col-4">
+      <div className="w-20">
         {parseInt(inputText) === 18 ? (
           <input
             type="number"
@@ -300,11 +300,11 @@ export function StrengthModule(props) {
             value={extInput}
             onChange={(e) => setExtInput(e.target.value)}
             onBlur={() => submitExtChange()}
-            style={{ maxWidth: "70%", textAlign: "center" }}
+            
           />
         ) : null}
       </div>
-    </>
+    </div>
   );
 
   return editDisplay;

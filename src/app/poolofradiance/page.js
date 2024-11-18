@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from "react";
-// import "bootstrap/dist/css/bootstrap.css";
-// import "bootstrap/dist/js/bootstrap.js";
 import Image from "next/image";
 import {
   poolRadStatusCodes,
@@ -206,28 +204,28 @@ export default function PoolRadMain() {
             className="coverImage"
             src={poolRadCoverImage}
             alt="pool of radiance"
-            height={200}
+            height={400}
             style={{ width: "auto" }}
           />
           <Image
             className="coverImageFaded"
             src={azureCoverImage}
             alt="curse of the azure bonds"
-            height={200}
+            height={400}
             style={{ width: "auto" }}
           />
           <Image
             className="coverImageFaded"
             src={silverBladesCoverImage}
             alt="secret of the silver blades"
-            height={200}
+            height={400}
             style={{ width: "auto" }}
           />
           <Image
             className="coverImageFaded"
             src={podCoverImage}
             alt="pools of darkness"
-            height={200}
+            height={400}
             style={{ width: "auto" }}
           />
         </div>
