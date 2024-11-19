@@ -11,6 +11,7 @@ import {
 import PoolRadInventory from "./PoolRadInventory";
 import * as CharFunctions from "../CharFunctions";
 import * as CharComponents from "../CharComponents";
+import { AccordionCustom } from "../CharFunctions";
 import poolRadBanner from "../../../public/images/poolRad1Crop.png";
 import podCoverImage from "../../../public/images/pod800.jpg";
 import azureCoverImage from "../../../public/images/azure800.jpg";
@@ -233,6 +234,21 @@ export default function PoolRadMain() {
       </>
     );
 
+    
+
+
+
+const accordionItems = [
+  { title: "Character Info", content: <CharInfoDisplay /> },
+  { title: "Ability Scores and Levels", content: <CharAbilityDisplay /> },
+  { title: "Saving Throws", content: <CharSavesDisplay /> },
+  { title: "Thief Skills", content: <ThiefSkillsDisplay /> },
+  { title: "Money", content: <MoneyDisplay /> },
+  { title: "Magic User Spells", content: <MagicDisplay magicFilter="Mage" startingIndex={181} /> },
+  { title: "Cleric Spells", content: <MagicDisplay magicFilter="Cleric" startingIndex={178} /> }
+];
+
+
   return (
     <>
       <div className="mb-20">
@@ -275,8 +291,8 @@ export default function PoolRadMain() {
           <br />
           {dataArray ? (
             <>
-
-              <h3 className="infoPanelHeader drop-shadow-md">Character Info</h3>
+<AccordionCustom accordionItems={accordionItems}/>
+              {/* <h3 className="infoPanelHeader drop-shadow-md">Character Info</h3>
 
               <div>
                 <CharInfoDisplay />
@@ -314,7 +330,7 @@ export default function PoolRadMain() {
 
               <div>
                 <MagicDisplay magicFilter="Cleric" startingIndex={178} />
-              </div>
+              </div> */}
             </>
           ) : null}
         </div>

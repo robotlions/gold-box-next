@@ -160,12 +160,15 @@ export const CharInfoDisplay = (props) => {
   return (
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 mt-5">
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4">
-          <div className="font-semibold">Character Name</div>
+        <div className="grid grid-cols-12">
+          <div className="font-semibold col-span-4">Character Name</div>
+          <div className="col-span-8">
           <CharFunctions.NameModule
+        
             dataArray={props.dataArray}
             setDataArray={props.setDataArray}
           />
+          </div>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4">
           <div className="font-semibold">Max HP:</div>
