@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
       >
         <Nav />
         {children}
-        <p className="text-center mb-20 text-lg">Copyright {newYear} by <a href="https://chadmusick.com" className="text-blue-600 font-semibold">Chad Musick</a></p>
+        <p className="text-center mb-20">Copyright {newYear} by <a href="https://chadmusick.com" className="text-blue-600 font-semibold">Chad Musick</a></p>
       </body>
     </html>
     </>

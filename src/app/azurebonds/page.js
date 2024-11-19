@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import * as CharComponents from "../CharComponents";
 import {
   azureRaces,
@@ -16,6 +17,8 @@ import podCoverImage from "../../../public/images/pod800.jpg";
 import azureCoverImage from "../../../public/images/azure800.jpg";
 import silverBladesCoverImage from "../../../public/images/silverBlades800.jpg";
 import poolRadCoverImage from "../../../public/images/poolRadCover800.jpg";
+import { AccordionCustom } from "../CharFunctions";
+
 
 export default function AzureBonds(props) {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -203,45 +206,75 @@ export default function AzureBonds(props) {
    
     <h6>Need somewhere to start? Try the <em>Curse of the Azure Bonds</em> <a href={"/files/azureDefaultCharacters.zip"}>default characters</a>.</h6>
 
-      <div className="row g-1 d-flex justify-content-center" style={{marginTop:"5vh", textAlign:"center"}}>
-      <div className="col-md-auto">
-        <a href="/poolRad">
-          <Image className="coverImageFaded" src={poolRadCoverImage} alt="pool of radiance"/>
-        </a>
-      </div>
-      <div className="col-md-auto">
-       
-          <Image className="coverImage" src={azureCoverImage} alt="curse of the azure bonds"/>
-          
-      </div>
-      <div className="col-md-auto">
-        <a href="/silverblades">
-          <Image className="coverImageFaded" src={silverBladesCoverImage} alt="secret of the silver blades"/>
-        </a>
-      </div>
-      <div className="col-md-auto">
-        <a href="/pod">
-          <Image className="coverImageFaded" src={podCoverImage} alt="pools of darkness"/>
-        </a>
-      </div>
-    </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 justify-items-center md:mx-10">
+          <Image
+          className="opacity-50 hover:scale-110"
+            src={poolRadCoverImage}
+            alt="pool of radiance"
+            height={400}
+            style={{ width: "auto" }}
+          />
+          <Link href="/azurebonds">
+            <Image
+              src={azureCoverImage}
+              
+              alt="curse of the azure bonds"
+              height={400}
+              style={{ width: "auto" }}
+            />
+          </Link>
+          <Link href="/silverblades">
+            <Image
+              src={silverBladesCoverImage}
+              className="opacity-50 hover:scale-110"
+              alt="secret of the silver blades"
+              height={400}
+              style={{ width: "auto" }}
+            />
+          </Link>
+          <Link href="/poolsofdarkness">
+            <Image
+              src={podCoverImage}
+              className="opacity-50 hover:scale-110"
+              alt="pools of darkness"
+              height={400}
+              style={{ width: "auto" }}
+            />
+          </Link>
+        </div>
     </>
   );
 
-  return (
-    <div className="charEditBody">
-      <div className="row">
-      <div className="col-md-12 gx-0">
+  const characterAccordionItems = [
+    { title: "Character Info", content: <CharInfoDisplay /> },
+    { title: "Ability Scores and Levels", content: <CharAbilityDisplay /> },
+    { title: "Saving Throws", content: <CharSavesDisplay /> },
+    { title: "Thief Skills", content: <ThiefSkillsDisplay /> },
+    { title: "Money", content: <MoneyDisplay /> },
+    {
+      title: "Magic User Spells",
+      content: <MagicDisplay magicFilter="Mage" startingIndex={181} />,
+    },
+    {
+      title: "Cleric Spells",
+      content: <MagicDisplay magicFilter="Cleric" startingIndex={178} />,
+    },
+  ];
 
-        <img style={{width:"100%"}} src={azureBanner} alt="azure bonds title screen" />
-        <h2 className="mainTitle">
+  return (
+    
+      <div className="mb-60">
+      <div className="mb-20">
+
+        <Image className="w-full" src={azureBanner} alt="azure bonds title screen" />
+        <h2 className="text-center">
           Advanced Dungeons and Dragons: Curse of the Azure Bonds
         </h2>
       </div>
-      </div>
-      <div className="row" style={{ marginTop: 20 }}>
-        <div className="col-md-6">
-          <h3 style={{ textAlign: "center" }}>Character Editor</h3>
+      
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-15 mx-5">
+        <div className="w-11/12">
+          <h3 className="text-center">Character Editor</h3>
           <div className="mb-3">
             <input
               className="form-control"
@@ -267,204 +300,8 @@ export default function AzureBonds(props) {
           <p></p>
           {dataArray ? (
             <>
-              <div className="accordion" id="charEditAccordion">
-                <div className="accordion-item">
-                  <h2 className="accordion-header" id="headingOne">
-                    <button
-                      className="accordion-button"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseOne"
-                      aria-expanded="true"
-                      aria-controls="collapseOne"
-                    >
-                      Character Info
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseOne"
-                    className="accordion-collapse collapse show"
-                    aria-labelledby="headingOne"
-                  >
-                    <div className="accordion-body">
-                      <CharInfoDisplay />
-                    </div>
-                  </div>
-                </div>
-                <div className="accordion-item">
-                  <h2 className="accordion-header" id="headingTwo">
-                    <button
-                      className="accordion-button"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseTwo"
-                      aria-expanded="true"
-                      aria-controls="collapseTwo"
-                    >
-                      Ability Scores and Levels
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseTwo"
-                    className="accordion-collapse collapse show"
-                    aria-labelledby="headingTwo"
-                  >
-                    <div className="accordion-body">
-                      <CharAbilityDisplay />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="accordion-item">
-                  <h2 className="accordion-header" id="headingSaves">
-                    <button
-                      className="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseSaves"
-                      aria-expanded="true"
-                      aria-controls="collapseSaves"
-                    >
-                      Saving Throws
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseSaves"
-                    className="accordion-collapse collapse"
-                    aria-labelledby="headingSaves"
-                  >
-                    <div className="accordion-body">
-                      <CharSavesDisplay />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="accordion-item">
-                  <h2 className="accordion-header" id="headingThief">
-                    <button
-                      className="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseThief"
-                      aria-expanded="true"
-                      aria-controls="collapseThief"
-                    >
-                      Thief Skills
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseThief"
-                    className="accordion-collapse collapse"
-                    aria-labelledby="headingThief"
-                  >
-                    <div className="accordion-body">
-                      <ThiefSkillsDisplay />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="accordion-item">
-                  <h2 className="accordion-header" id="headingMoney">
-                    <button
-                      className="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseMoney"
-                      aria-expanded="true"
-                      aria-controls="collapseMoney"
-                    >
-                      Money
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseMoney"
-                    className="accordion-collapse collapse"
-                    aria-labelledby="headingMoney"
-                  >
-                    <div className="accordion-body">
-                      <MoneyDisplay />
-                    </div>
-                  </div>
-                </div>
-                <div className="accordion-item">
-                  <h2 className="accordion-header" id="headingThree">
-                    <button
-                      className="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseThree"
-                      aria-expanded="false"
-                      aria-controls="collapseThree"
-                    >
-                      Magic-user Spells
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseThree"
-                    className="accordion-collapse collapse"
-                    aria-labelledby="headingThree"
-                  >
-                    <div className="accordion-body">
-                      <div className="row">
-                        <MagicDisplay startingIndex={311} magicFilter="Mage" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="accordion-item">
-                  <h2 className="accordion-header" id="headingFour">
-                    <button
-                      className="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseFour"
-                      aria-expanded="false"
-                      aria-controls="collapseFour"
-                    >
-                      Cleric Spells
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseFour"
-                    className="accordion-collapse collapse"
-                    aria-labelledby="headingFour"
-                  >
-                    <div className="accordion-body">
-                      <div className="row">
-                        <MagicDisplay
-                          startingIndex={301}
-                          magicFilter="Cleric"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="accordion-item">
-                  <h2 className="accordion-header" id="headingFive">
-                    <button
-                      className="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseFive"
-                      aria-expanded="false"
-                      aria-controls="collapseFive"
-                    >
-                      Druid Spells
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseFive"
-                    className="accordion-collapse collapse"
-                    aria-labelledby="headingFive"
-                  >
-                    <div className="accordion-body">
-                      <div className="row">
-                        <MagicDisplay startingIndex={306} magicFilter="Druid" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <AccordionCustom accordionItems={characterAccordionItems} />
+ 
             </>
           ) : null}
         </div>

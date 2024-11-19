@@ -19,9 +19,9 @@ export default function Home() {
     return(
       boxImages.map((boxImage)=>{
         return(
-          <div className="text-center" key={boxImage.name}>
+          <div className="text-center hover:scale-110" key={boxImage.name}>
             <Link href={boxImage.href}>
-            <Image height={400} src={boxImage.image} alt={boxImage.alt} style={{width:"auto"}} className="hover:scale-110"/>
+            <Image height={400} src={boxImage.image} alt={boxImage.alt} style={{width:"auto"}}/>
             <h6 className="text-lg">{boxImage.name}</h6>
             </Link>
           </div>
