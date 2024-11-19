@@ -79,5 +79,5 @@ button{
 }
 
 .infoPanelHeader{
-  @apply bg-blue-900 rounded h-16 pl-3 pt-3 text-white
+  @apply bg-blue-600 rounded h-16 pl-3 pt-3 text-white
 }

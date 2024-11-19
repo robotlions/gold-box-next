@@ -238,7 +238,7 @@ export default function PoolRadMain() {
 
 
 
-const accordionItems = [
+const characterAccordionItems = [
   { title: "Character Info", content: <CharInfoDisplay /> },
   { title: "Ability Scores and Levels", content: <CharAbilityDisplay /> },
   { title: "Saving Throws", content: <CharSavesDisplay /> },
@@ -291,7 +291,7 @@ const accordionItems = [
           <br />
           {dataArray ? (
             <>
-<AccordionCustom accordionItems={accordionItems}/>
+<AccordionCustom accordionItems={characterAccordionItems}/>
               {/* <h3 className="infoPanelHeader drop-shadow-md">Character Info</h3>
 
               <div>
