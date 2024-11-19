@@ -209,7 +209,6 @@ export default function PoolRadMain() {
         <br />
         <br />
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 justify-items-center md:mx-10">
-          
           <Image
             src={poolRadCoverImage}
             alt="pool of radiance"
@@ -217,29 +216,32 @@ export default function PoolRadMain() {
             style={{ width: "auto" }}
           />
           <Link href="/azurebonds">
-          <Image
-            src={azureCoverImage}
-            className="opacity-50 hover:scale-110"
-            alt="curse of the azure bonds"
-            height={400}
-            style={{ width: "auto" }}
-          /></Link>
+            <Image
+              src={azureCoverImage}
+              className="opacity-50 hover:scale-110"
+              alt="curse of the azure bonds"
+              height={400}
+              style={{ width: "auto" }}
+            />
+          </Link>
           <Link href="/silverblades">
-          <Image
-            src={silverBladesCoverImage}
-            className="opacity-50 hover:scale-110"
-            alt="secret of the silver blades"
-            height={400}
-            style={{ width: "auto" }}
-          /></Link>
+            <Image
+              src={silverBladesCoverImage}
+              className="opacity-50 hover:scale-110"
+              alt="secret of the silver blades"
+              height={400}
+              style={{ width: "auto" }}
+            />
+          </Link>
           <Link href="/poolsofdarkness">
-          <Image
-            src={podCoverImage}
-            className="opacity-50 hover:scale-110"
-            alt="pools of darkness"
-            height={400}
-            style={{ width: "auto" }}
-          /></Link>
+            <Image
+              src={podCoverImage}
+              className="opacity-50 hover:scale-110"
+              alt="pools of darkness"
+              height={400}
+              style={{ width: "auto" }}
+            />
+          </Link>
         </div>
       </>
     );
@@ -261,14 +263,17 @@ export default function PoolRadMain() {
   ];
 
   return (
-    < div className="mb-60">
+    <div className="mb-60">
       <div className="mb-20">
         <Image
           className="w-full"
           src={poolRadBanner}
           alt="pool of radiance orignal title screen"
         />
-        <h3 className="text-center text-3xl mt-10">
+        <h3
+          className="text-center text-3xl mt-10"
+          style={{ fontFamily: "IM-Fell" }}
+        >
           Advanced Dungeons and Dragons: Pool of Radiance
         </h3>
       </div>
@@ -277,7 +282,7 @@ export default function PoolRadMain() {
           <h3 className="text-center">Character Editor</h3>
           <div className="mb-3">
             <input
-              className="shadow w-full appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="file:border-solid file:border-2 file:rounded file:hover:text-white file:border-green-600 file:hover:border-solid file:py-2 file:px-2 file:hover:bg-green-600 file:bg-white  file:text-green-600 shadow w-full appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="file"
               id="fileSelect"
               accept=".sav"
@@ -291,20 +296,16 @@ export default function PoolRadMain() {
           {dataArray ? (
             <div className="text-right">
               <button
-                className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+                className="bg-transparent hover:bg-blue-600 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-600 hover:border-transparent rounded"
                 onClick={() => exportSaveFile()}
               >
                 Download Character File
               </button>
             </div>
           ) : null}
-          <br />
-          <br />
+         <br/>
           {dataArray ? (
-            
-              <AccordionCustom accordionItems={characterAccordionItems} />
-              
-            
+            <AccordionCustom accordionItems={characterAccordionItems} />
           ) : null}
         </div>
 

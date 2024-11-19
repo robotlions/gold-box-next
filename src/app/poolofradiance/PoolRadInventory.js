@@ -69,7 +69,8 @@ export default function PoolRadInventory(props) {
         <div className="col-md">
           <div className="mb-3">
             <input
-              className="shadow w-full appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="file:border-solid file:border-2 file:rounded file:hover:text-white file:border-green-600 file:hover:border-solid file:py-2 file:px-2 file:hover:bg-green-600 file:bg-white  file:text-green-600 shadow w-full appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+
 
               type="file"
               id="inventoryFileSelect"
@@ -84,7 +85,7 @@ export default function PoolRadInventory(props) {
           {dataArray ? (
             <div className="text-right">
             <button
-              className="hover:text-white hover:bg-blue-500 hover:border-blue-500"
+              className="hover:text-white hover:bg-blue-600 hover:border-blue-500"
               onClick={() => exportSaveFile()}
             >
               Download Inventory File

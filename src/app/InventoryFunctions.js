@@ -184,12 +184,12 @@ export function ItemEditModule(props) {
         </div>
       </div>
       <div className="grid grid-cols-2" style={{ marginTop: 10 }}>
-        <button className="w-40 border-green-500 text-green-500 hover:bg-green-500 hover:text-white" onClick={()=> toggleAccordion(props.index)}>
+        <button className="w-40 border-green-600 text-green-600 hover:bg-green-600 hover:text-white" onClick={()=> toggleAccordion(props.index)}>
           Done Editing
         </button>
         <button
           onClick={() => props.duplicateItem(props.item)}
-          className="w-40 hover:text-white hover:bg-blue-400"
+          className="w-40 hover:text-white hover:bg-blue-600"
         >
           Duplicate Item
         </button>
@@ -201,7 +201,7 @@ export function ItemEditModule(props) {
     <div key={props.index} className="border-b mb-5">
       <button
         onClick={() => toggleAccordion(props.index)}
-        className="flex justify-between items-center w-full py-4 px-6 text-left text-blue-700 hover:text-white hover:bg-blue-500 focus:outline-none text-lg"
+        className="flex justify-between items-center w-full py-4 px-6 text-left text-blue-700 hover:text-white hover:bg-blue-600 focus:outline-none text-lg"
       >
         {ammo > 0 ? ammo : null} {displayName1} {displayName2} {displayName3}
         <svg
