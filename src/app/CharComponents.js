@@ -82,7 +82,7 @@ export const CharAbilityDisplay = (props) => {
           </div>
         </div>
 
-        <div className="mt-5">
+        <div className="mt-5 md:ml-8">
           <h4>Levels</h4>
           <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-2 gap-4">
             <div>

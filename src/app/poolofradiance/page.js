@@ -192,7 +192,7 @@ export default function PoolRadMain() {
     dataArray || inventoryLoaded === true ? null : (
       <>
         <h5 style={{ marginBottom: 20 }}>
-          To begin, upload a character file <strong>(.SAV)</strong> or an
+          To begin, upload a character file (.SAV) or an
           inventory file (.ITM) from <em>Pool of Radiance</em>.
         </h5>
 

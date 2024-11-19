@@ -75,7 +75,7 @@ export default function AzureBonds(props) {
     }
 
     let spellSlots = spellArray.map((item, index) => (
-      <div key={index} className="col-2">
+      <div key={index} className="mt-5">
         {item + 1}:{" "}
         <CharFunctions.LevelModule
           dataArray={dataArray}
@@ -87,8 +87,9 @@ export default function AzureBonds(props) {
 
     return (
       <>
-        {spellSlots}
-        <h4>{props.magicFilter} Spells:</h4>{" "}
+        <div className="flex gap-3">{spellSlots}</div>
+        <br/>
+        <h5>{props.magicFilter} Spells:</h5>{" "}
         <div>
           <CharFunctions.SpellModule
             dataArray={dataArray}
@@ -204,8 +205,8 @@ export default function AzureBonds(props) {
     <>
     <h5 style={{marginBottom:20}}>To begin, upload a character file (.SAV) or an inventory file (.SWG) from <em>Curse of the Azure Bonds</em>.</h5>    
    
-    <h6>Need somewhere to start? Try the <em>Curse of the Azure Bonds</em> <a href={"/files/azureDefaultCharacters.zip"}>default characters</a>.</h6>
-
+    <h5>Need somewhere to start? Try the <em>Curse of the Azure Bonds</em> <a href={"/files/azureDefaultCharacters.zip"} className="text-blue-600">default characters</a>.</h5>
+<br/><br/>
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 justify-items-center md:mx-10">
           <Image
           className="opacity-50 hover:scale-110"
@@ -267,9 +268,12 @@ export default function AzureBonds(props) {
       <div className="mb-20">
 
         <Image className="w-full" src={azureBanner} alt="azure bonds title screen" />
-        <h2 className="text-center">
+        <h3
+          className="text-center text-3xl mt-10"
+          style={{ fontFamily: "IM-Fell" }}
+        >
           Advanced Dungeons and Dragons: Curse of the Azure Bonds
-        </h2>
+        </h3>
       </div>
       
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-15 mx-5">
@@ -277,7 +281,8 @@ export default function AzureBonds(props) {
           <h3 className="text-center">Character Editor</h3>
           <div className="mb-3">
             <input
-              className="form-control"
+              className="file:border-solid file:border-2 file:rounded file:hover:text-white file:border-green-600 file:hover:border-solid file:py-2 file:px-2 file:hover:bg-green-600 file:bg-white  file:text-green-600 shadow w-full appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+
               type="file"
               id="fileSelect"
               accept=".sav"
@@ -289,12 +294,14 @@ export default function AzureBonds(props) {
             />
           </div>
           {dataArray ? (
+            <div className="text-right">
             <button
-              className="btn downloadButton"
+                className="bg-transparent hover:bg-blue-600 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-600 hover:border-transparent rounded"
+              
               onClick={() => exportSaveFile()}
             >
               Download Character File
-            </button>
+            </button></div>
           ) : null}
           <br />
           <p></p>
@@ -305,7 +312,7 @@ export default function AzureBonds(props) {
             </>
           ) : null}
         </div>
-        <div className="col-md-6">
+        <div className="w-11/12">
           <h3 style={{ textAlign: "center" }}>Inventory Editor</h3>
           <AzureInventory inventoryLoaded={inventoryLoaded} setInventoryLoaded={setInventoryLoaded}/>
         </div>

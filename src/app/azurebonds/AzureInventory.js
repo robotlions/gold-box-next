@@ -68,7 +68,8 @@ export default function AzureInventory(props) {
         <div className="col-md">
           <div className="mb-3">
             <input
-              className="form-control"
+              className="file:border-solid file:border-2 file:rounded file:hover:text-white file:border-green-600 file:hover:border-solid file:py-2 file:px-2 file:hover:bg-green-600 file:bg-white  file:text-green-600 shadow w-full appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+
               type="file"
               id="inventoryFileSelect"
               accept=".swg"
@@ -80,12 +81,14 @@ export default function AzureInventory(props) {
           </div>
 
           {dataArray ? (
+            <div className="text-right">
             <button
-              className="btn downloadButton"
+            className="bg-transparent hover:bg-blue-600 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-600 hover:border-transparent rounded"
+
               onClick={() => exportSaveFile()}
             >
               Download Inventory File
-            </button>
+            </button></div>
           ) : null}
         </div>
       </div>
