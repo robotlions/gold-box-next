@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState } from "react";
 import Image from "next/image";
@@ -19,12 +19,10 @@ import silverBladesCoverImage from "../../../public/images/silverBlades800.jpg";
 import poolRadCoverImage from "../../../public/images/poolRadCover800.jpg";
 import { AccordionCustom } from "../CharFunctions";
 
-
 export default function AzureBonds(props) {
   const [selectedFile, setSelectedFile] = useState(null);
   const [dataArray, setDataArray] = useState(null);
   const [inventoryLoaded, setInventoryLoaded] = useState(false);
-
 
   function exportSaveFile() {
     if (!selectedFile) {
@@ -88,7 +86,7 @@ export default function AzureBonds(props) {
     return (
       <>
         <div className="flex gap-3">{spellSlots}</div>
-        <br/>
+        <br />
         <h5>{props.magicFilter} Spells:</h5>{" "}
         <div>
           <CharFunctions.SpellModule
@@ -196,20 +194,33 @@ export default function AzureBonds(props) {
         hearNoiseIndex={239}
         climbWallsIndex={240}
         readLanguagesIndex={241}
-
       />
     );
   }
 
-  let splashImage = dataArray || inventoryLoaded===true ? null : (
-    <>
-    <h5 style={{marginBottom:20}}>To begin, upload a character file (.SAV) or an inventory file (.SWG) from <em>Curse of the Azure Bonds</em>.</h5>    
-   
-    <h5>Need somewhere to start? Try the <em>Curse of the Azure Bonds</em> <a href={"/files/azureDefaultCharacters.zip"} className="text-blue-600">default characters</a>.</h5>
-<br/><br/>
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 justify-items-center md:mx-10">
+  let splashImage =
+    dataArray || inventoryLoaded === true ? null : (
+      <>
+        <h5 style={{ marginBottom: 20 }}>
+          To begin, upload a character file (.SAV) or an inventory file (.SWG)
+          from <em>Curse of the Azure Bonds</em>.
+        </h5>
+
+        <h5>
+          Need somewhere to start? Try the <em>Curse of the Azure Bonds</em>{" "}
+          <a
+            href={"/files/azureDefaultCharacters.zip"}
+            className="text-blue-600"
+          >
+            default characters
+          </a>
+          .
+        </h5>
+        <br />
+        <br />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 justify-items-center md:mx-10">
           <Image
-          className="opacity-50 hover:scale-110"
+            className="opacity-50 hover:scale-110"
             src={poolRadCoverImage}
             alt="pool of radiance"
             height={400}
@@ -218,7 +229,6 @@ export default function AzureBonds(props) {
           <Link href="/azurebonds">
             <Image
               src={azureCoverImage}
-              
               alt="curse of the azure bonds"
               height={400}
               style={{ width: "auto" }}
@@ -243,8 +253,8 @@ export default function AzureBonds(props) {
             />
           </Link>
         </div>
-    </>
-  );
+      </>
+    );
 
   const characterAccordionItems = [
     { title: "Character Info", content: <CharInfoDisplay /> },
@@ -254,20 +264,22 @@ export default function AzureBonds(props) {
     { title: "Money", content: <MoneyDisplay /> },
     {
       title: "Magic User Spells",
-      content: <MagicDisplay magicFilter="Mage" startingIndex={181} />,
+      content: <MagicDisplay magicFilter="Mage" startingIndex={311} />,
     },
     {
       title: "Cleric Spells",
-      content: <MagicDisplay magicFilter="Cleric" startingIndex={178} />,
+      content: <MagicDisplay magicFilter="Cleric" startingIndex={301} />,
     },
   ];
 
   return (
-    
-      <div className="mb-60">
+    <div className="mb-60">
       <div className="mb-20">
-
-        <Image className="w-full" src={azureBanner} alt="azure bonds title screen" />
+        <Image
+          className="w-full"
+          src={azureBanner}
+          alt="azure bonds title screen"
+        />
         <h3
           className="text-center text-3xl mt-10"
           style={{ fontFamily: "IM-Fell" }}
@@ -275,14 +287,13 @@ export default function AzureBonds(props) {
           Advanced Dungeons and Dragons: Curse of the Azure Bonds
         </h3>
       </div>
-      
+
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-15 mx-5">
         <div className="w-11/12">
           <h3 className="text-center">Character Editor</h3>
           <div className="mb-3">
             <input
               className="file:border-solid file:border-2 file:rounded file:hover:text-white file:border-green-600 file:hover:border-solid file:py-2 file:px-2 file:hover:bg-green-600 file:bg-white  file:text-green-600 shadow w-full appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-
               type="file"
               id="fileSelect"
               accept=".sav"
@@ -295,33 +306,32 @@ export default function AzureBonds(props) {
           </div>
           {dataArray ? (
             <div className="text-right">
-            <button
+              <button
                 className="bg-transparent hover:bg-blue-600 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-600 hover:border-transparent rounded"
-              
-              onClick={() => exportSaveFile()}
-            >
-              Download Character File
-            </button></div>
+                onClick={() => exportSaveFile()}
+              >
+                Download Character File
+              </button>
+            </div>
           ) : null}
           <br />
           <p></p>
           {dataArray ? (
             <>
-            <AccordionCustom accordionItems={characterAccordionItems} />
- 
+              <AccordionCustom accordionItems={characterAccordionItems} />
             </>
           ) : null}
         </div>
         <div className="w-11/12">
-          <h3 style={{ textAlign: "center" }}>Inventory Editor</h3>
-          <AzureInventory inventoryLoaded={inventoryLoaded} setInventoryLoaded={setInventoryLoaded}/>
+          <h3 className="text-center">Inventory Editor</h3>
+          <AzureInventory
+            inventoryLoaded={inventoryLoaded}
+            setInventoryLoaded={setInventoryLoaded}
+          />
         </div>
       </div>
-      <div
-        className="row g-1 d-flex justify-content-center"
-        style={{ marginTop: "5vh", textAlign: "center" }}
-      >
-        <div className="col-md-auto">{splashImage}</div>
+      <div style={{ marginTop: "5vh", textAlign: "center" }}>
+        <div>{splashImage}</div>
       </div>
     </div>
   );
