@@ -9,6 +9,11 @@ export function ItemEditModule(props) {
   const [displayName3, setDisplayName3] = useState("");
   const [ammo, setAmmo] = useState("");
   const [updated, setUpdated] = useState(true);
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleAccordion = (index) => {
+    setOpenIndex(index === openIndex ? null : index);
+  };
 
   useEffect(() => {
     if (props.loadedItem) {
@@ -95,12 +100,8 @@ export function ItemEditModule(props) {
     );
   }
 
-  const mainDisplay = (
-    <div className="mb-5">
-      <h3 className="infoPanelHeader drop-shadow-md">
-        {ammo > 0 ? ammo : null} {displayName1} {displayName2} {displayName3}
-      </h3>
-
+  const invInfoBlock = (
+    <>
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 mt-5 mb-5 gap-4">
         <div className="grid grid-cols-2">
           <div>Type:</div>
@@ -150,9 +151,7 @@ export function ItemEditModule(props) {
           </div>
         ) : null}
       </div>
-      
-        
-      
+
       <div style={{ marginTop: 20 }} className="row">
         <h5>Rename</h5>
       </div>
@@ -185,13 +184,49 @@ export function ItemEditModule(props) {
         </div>
       </div>
       <div className="grid grid-cols-2" style={{ marginTop: 10 }}>
-        <button className="w-40 border-green-500 text-green-500 hover:bg-green-500 hover:text-white">Done Editing</button>
+        <button className="w-40 border-green-500 text-green-500 hover:bg-green-500 hover:text-white" onClick={()=> toggleAccordion(props.index)}>
+          Done Editing
+        </button>
         <button
           onClick={() => props.duplicateItem(props.item)}
           className="w-40 hover:text-white hover:bg-blue-400"
         >
           Duplicate Item
         </button>
+      </div>
+    </>
+  );
+
+  const mainDisplay = (
+    <div key={props.index} className="border-b mb-5">
+      <button
+        onClick={() => toggleAccordion(props.index)}
+        className="flex justify-between items-center w-full py-4 px-6 text-left text-blue-700 hover:text-white hover:bg-blue-500 focus:outline-none text-lg"
+      >
+        {ammo > 0 ? ammo : null} {displayName1} {displayName2} {displayName3}
+        <svg
+          className={`w-5 h-5 transform transition-transform ${
+            openIndex === props.index ? "rotate-180" : ""
+          }`}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M19 9l-7 7-7-7"
+          ></path>
+        </svg>
+      </button>
+      <div
+        className={`overflow-hidden transition-all duration-300 ${
+          openIndex === props.index ? "max-h-screen" : "max-h-0"
+        }`}
+      >
+        <div className="px-6 py-4 text-gray-600">{invInfoBlock}</div>
       </div>
     </div>
   );
