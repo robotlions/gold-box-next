@@ -18,6 +18,9 @@ export const metadata = {
   description: "A NextJS app for editing saved games from the classic Dungons and Drgaons Gold Box PC games.",
 };
 
+const newDate = new Date();
+const newYear = newDate.getFullYear();
+
 export default function RootLayout({ children }) {
   return (
     <>
@@ -29,6 +32,7 @@ export default function RootLayout({ children }) {
       >
         <Nav />
         {children}
+        <p className="text-center mb-20 text-lg">Copyright {newYear} by <a href="https://chadmusick.com" className="text-blue-600 font-semibold">Chad Musick</a></p>
       </body>
     </html>
     </>

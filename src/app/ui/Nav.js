@@ -10,13 +10,17 @@ import Link from 'next/link';
 export default function Nav() {
 const pathname = usePathname();
   const links = [
-    { name: "Pool of Radiance", href: "/poolofradiance" },
+    { linkName: "Pool of Radiance", href: "/poolofradiance" },
     {
-      name: "Curse of the Azure Bonds",
+      linkName: "Curse of the Azure Bonds",
       href: "/azurebonds",
     },
-    { name: "Secret of the Silver Blades", href: "/silverblades" },
-    {name: "Pools of Darkness", href: "/poolsofdarkness"},
+    { linkName: "Secret of the Silver Blades", href: "/silverblades" },
+    {linkName: "Pools of Darkness", href: "/poolsofdarkness"},
+    {linkName: "About", href: "/about"},
+    {linkName: "robotlions.com", href:"https://robotlions.com"}
+    
+    
   ];
 
   function LinkMap() {
@@ -24,7 +28,7 @@ const pathname = usePathname();
     
     links.map((link) => {
     return (
-      <li key={link.name}>
+      <li key={link.linkName}>
       <Link
         
         href={link.href}
@@ -35,7 +39,7 @@ const pathname = usePathname();
           },
         )}
         >
-        <p className="hidden md:block">{link.name}</p>
+        <p className="hidden md:block">{link.linkName}</p>
       </Link>
       </li>
     )})
