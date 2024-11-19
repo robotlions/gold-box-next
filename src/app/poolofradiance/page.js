@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   poolRadStatusCodes,
   poolRadRaces,
@@ -191,66 +192,76 @@ export default function PoolRadMain() {
     dataArray || inventoryLoaded === true ? null : (
       <>
         <h5 style={{ marginBottom: 20 }}>
-          To begin, upload a character file (.SAV) or an inventory file (.ITM)
-          from <em>Pool of Radiance</em>.
+          To begin, upload a character file <strong>(.SAV)</strong> or an
+          inventory file (.ITM) from <em>Pool of Radiance</em>.
         </h5>
 
-        <h6>
-          Need somewhere to start? Try the <em>Pool of Radiance</em>{" "}
-          <a href={"/files/poolRadDefaultCharacters.zip"}>default characters</a>
+        <h5>
+          Need somewhere to start? Download the <em>Pool of Radiance</em>{" "}
+          <a
+            href={"/files/poolRadDefaultCharacters.zip"}
+            className="text-blue-700"
+          >
+            default characters
+          </a>
           .
-        </h6>
-
+        </h5>
+        <br />
+        <br />
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 justify-items-center md:mx-10">
+          
           <Image
-            className="coverImage"
             src={poolRadCoverImage}
             alt="pool of radiance"
             height={400}
             style={{ width: "auto" }}
           />
+          <Link href="/azurebonds">
           <Image
-            className="coverImageFaded"
             src={azureCoverImage}
+            className="opacity-50 hover:scale-110"
             alt="curse of the azure bonds"
             height={400}
             style={{ width: "auto" }}
-          />
+          /></Link>
+          <Link href="/silverblades">
           <Image
-            className="coverImageFaded"
             src={silverBladesCoverImage}
+            className="opacity-50 hover:scale-110"
             alt="secret of the silver blades"
             height={400}
             style={{ width: "auto" }}
-          />
+          /></Link>
+          <Link href="/poolsofdarkness">
           <Image
-            className="coverImageFaded"
             src={podCoverImage}
+            className="opacity-50 hover:scale-110"
             alt="pools of darkness"
             height={400}
             style={{ width: "auto" }}
-          />
+          /></Link>
         </div>
       </>
     );
 
-    
-
-
-
-const characterAccordionItems = [
-  { title: "Character Info", content: <CharInfoDisplay /> },
-  { title: "Ability Scores and Levels", content: <CharAbilityDisplay /> },
-  { title: "Saving Throws", content: <CharSavesDisplay /> },
-  { title: "Thief Skills", content: <ThiefSkillsDisplay /> },
-  { title: "Money", content: <MoneyDisplay /> },
-  { title: "Magic User Spells", content: <MagicDisplay magicFilter="Mage" startingIndex={181} /> },
-  { title: "Cleric Spells", content: <MagicDisplay magicFilter="Cleric" startingIndex={178} /> }
-];
-
+  const characterAccordionItems = [
+    { title: "Character Info", content: <CharInfoDisplay /> },
+    { title: "Ability Scores and Levels", content: <CharAbilityDisplay /> },
+    { title: "Saving Throws", content: <CharSavesDisplay /> },
+    { title: "Thief Skills", content: <ThiefSkillsDisplay /> },
+    { title: "Money", content: <MoneyDisplay /> },
+    {
+      title: "Magic User Spells",
+      content: <MagicDisplay magicFilter="Mage" startingIndex={181} />,
+    },
+    {
+      title: "Cleric Spells",
+      content: <MagicDisplay magicFilter="Cleric" startingIndex={178} />,
+    },
+  ];
 
   return (
-    <>
+    < div className="mb-60">
       <div className="mb-20">
         <Image
           className="w-full"
@@ -279,59 +290,21 @@ const characterAccordionItems = [
           </div>
           {dataArray ? (
             <div className="text-right">
-            <button
-              className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
-              onClick={() => exportSaveFile()}
-            >
-              Download Character File
-            </button>
+              <button
+                className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+                onClick={() => exportSaveFile()}
+              >
+                Download Character File
+              </button>
             </div>
           ) : null}
           <br />
           <br />
           {dataArray ? (
-            <>
-<AccordionCustom accordionItems={characterAccordionItems}/>
-              {/* <h3 className="infoPanelHeader drop-shadow-md">Character Info</h3>
-
-              <div>
-                <CharInfoDisplay />
-              </div>
-              <br />
-              <h3 className="infoPanelHeader drop-shadow-md">Ability Scores and Levels</h3>
-
-              <div>
-                <CharAbilityDisplay />
-              </div>
-              <br />
-              <h3 className="infoPanelHeader drop-shadow-md">Saving Throws</h3>
-
-              <div>
-                <CharSavesDisplay />
-              </div>
-              <br />
-              <h3 className="infoPanelHeader drop-shadow-md">Thief Skills</h3>
-              <div>
-                <ThiefSkillsDisplay />
-              </div>
-              <br />
-              <h3 className="infoPanelHeader drop-shadow-md">Money</h3>
-              <div>
-                <MoneyDisplay />
-              </div>
-              <br />
-              <h3 className="infoPanelHeader drop-shadow-md">Magic-user Spells</h3>
-
-              <div>
-                <MagicDisplay magicFilter="Mage" startingIndex={181} />
-              </div>
-              <br />
-              <h3 className="infoPanelHeader drop-shadow-md">Cleric Spells</h3>
-
-              <div>
-                <MagicDisplay magicFilter="Cleric" startingIndex={178} />
-              </div> */}
-            </>
+            
+              <AccordionCustom accordionItems={characterAccordionItems} />
+              
+            
           ) : null}
         </div>
 
@@ -350,6 +323,6 @@ const characterAccordionItems = [
       >
         <div className="col-md-auto">{splashImage}</div>
       </div>
-    </>
+    </div>
   );
 }
