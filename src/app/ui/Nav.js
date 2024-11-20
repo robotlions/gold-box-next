@@ -50,7 +50,7 @@ const pathname = usePathname();
 
 
     return (
-        <ul className="flex justify-between items-center mx-5">
+        <ul className="flex justify-between items-center mx-5 mt-5">
          <li key="Curse"><Link href="/"><h6 className="text-2xl">Curse of the Secret Pools!</h6></Link></li>
         <LinkMap />
       </ul>
