@@ -218,20 +218,20 @@ export default function AzureBonds(props) {
         </h5>
         <br />
         <br />
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 justify-items-center md:mx-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 justify-items-center md:mx-10">
           <Image
             className="opacity-50 hover:scale-110"
             src={poolRadCoverImage}
             alt="pool of radiance"
             height={400}
-            style={{ width: "auto" }}
+            
           />
           <Link href="/azurebonds">
             <Image
               src={azureCoverImage}
               alt="curse of the azure bonds"
               height={400}
-              style={{ width: "auto" }}
+              
             />
           </Link>
           <Link href="/silverblades">
@@ -240,7 +240,7 @@ export default function AzureBonds(props) {
               className="opacity-50 hover:scale-110"
               alt="secret of the silver blades"
               height={400}
-              style={{ width: "auto" }}
+              
             />
           </Link>
           <Link href="/poolsofdarkness">
@@ -249,7 +249,7 @@ export default function AzureBonds(props) {
               className="opacity-50 hover:scale-110"
               alt="pools of darkness"
               height={400}
-              style={{ width: "auto" }}
+              
             />
           </Link>
         </div>

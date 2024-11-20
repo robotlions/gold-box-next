@@ -198,10 +198,10 @@ export function ItemEditModule(props) {
   );
 
   const mainDisplay = (
-    <div key={props.index} className="border-b mb-5">
+    <div key={props.index} className="mb-5">
       <button
         onClick={() => toggleAccordion(props.index)}
-        className="flex justify-between items-center w-full py-4 px-6 text-left text-blue-700 hover:text-white hover:bg-blue-600 focus:outline-none text-lg"
+        className="flex justify-between items-center w-full py-4 px-6 text-left text-blue-500  hover:bg-gray-200 focus:outline-none text-lg"
       >
         {ammo > 0 ? ammo : null} {displayName1} {displayName2} {displayName3}
         <svg

@@ -351,10 +351,10 @@ export function AccordionCustom(props) {
   return (
     <div className="w-full">
       {props.accordionItems.map((item, index) => (
-        <div key={index} className="border-b">
+        <div key={index}>
           <button
             onClick={() => toggleAccordion(index)}
-            className="flex justify-between items-center w-full py-4 px-6 text-left text-blue-700 hover:text-white hover:bg-blue-600 focus:outline-none text-lg"
+            className="flex justify-between items-center w-full py-4 px-6 text-left text-blue-500 hover:bg-gray-200 focus:outline-none text-lg"
           >
             <span>{item.title}</span>
             <svg
@@ -379,7 +379,7 @@ export function AccordionCustom(props) {
               openIndex === index ? "max-h-screen" : "max-h-0"
             }`}
           >
-            <div className="px-6 py-4 text-gray-600">{item.content}</div>
+            <div className="px-6 py-4 text-gray-600 text-base">{item.content}</div>
           </div>
           <br/>
         </div>

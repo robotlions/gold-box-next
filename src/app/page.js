@@ -21,7 +21,7 @@ export default function Home() {
         return(
           <div className="text-center hover:scale-110" key={boxImage.name}>
             <Link href={boxImage.href}>
-            <Image height={400} src={boxImage.image} alt={boxImage.alt} style={{width:"auto"}}/>
+            <Image height={400} src={boxImage.image} alt={boxImage.alt} />
             <h6 className="text-lg">{boxImage.name}</h6>
             </Link>
           </div>
@@ -36,7 +36,7 @@ export default function Home() {
         Online editor for the Advanced Dungeons and Dragons gold box games.
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 justify-items-center md:mx-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 justify-items-center md:mx-10">
         <BoxImagesList />
       </div> 
     </div>
