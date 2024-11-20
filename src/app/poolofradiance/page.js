@@ -265,11 +265,12 @@ export default function PoolRadMain() {
   return (
     <div className="mb-60">
       <div className="mb-20">
+        <div className="flex justify-center mt-10">
         <Image
-          className="w-full"
+          className="w-10/12"
           src={poolRadBanner}
           alt="pool of radiance orignal title screen"
-        />
+        /></div>
         <h3
           className="text-center text-3xl mt-10"
           style={{ fontFamily: "IM-Fell" }}
@@ -277,12 +278,12 @@ export default function PoolRadMain() {
           Advanced Dungeons and Dragons: Pool of Radiance
         </h3>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-15 mx-5">
-        <div className="w-11/12">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 justify-items-center">
+        <div className="w-10/12">
           <h3 className="text-center">Character Editor</h3>
           <div className="mb-3">
             <input
-              className="file:border-solid file:border-2 file:rounded file:hover:text-white file:border-green-600 file:hover:border-solid file:py-2 file:px-2 file:hover:bg-green-600 file:bg-white  file:text-green-600 shadow w-full appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="w-full file:border-solid file:border-2 file:rounded file:hover:text-white file:border-green-600 file:hover:border-solid file:py-2 file:px-2 file:hover:bg-green-600 file:bg-white  file:text-green-600 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="file"
               id="fileSelect"
               accept=".sav"
@@ -309,12 +310,13 @@ export default function PoolRadMain() {
           ) : null}
         </div>
 
-        <div className="w-11/12">
+        <div className="w-10/12">
           <h3 style={{ textAlign: "center" }}>Inventory Editor</h3>
 
           <PoolRadInventory
             inventoryLoaded={inventoryLoaded}
             setInventoryLoaded={setInventoryLoaded}
+            
           />
         </div>
       </div>

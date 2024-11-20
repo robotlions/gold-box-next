@@ -66,10 +66,11 @@ export default function PodInventory(props) {
   return (
     <>
       <div className="row" style={{ minHeight: 40 }}>
-        <div className="col-md">
+        
           <div className="mb-3">
             <input
-              className="form-control"
+              className="w-full file:border-solid file:border-2 file:rounded file:hover:text-white file:border-green-600 file:hover:border-solid file:py-2 file:px-2 file:hover:bg-green-600 file:bg-white  file:text-green-600 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+
               type="file"
               id="inventoryFileSelect"
               accept=".thg"
@@ -81,14 +82,16 @@ export default function PodInventory(props) {
           </div>
 
           {dataArray ? (
+            <div className="text-right">
             <button
-              className="btn downloadButton"
+            className="hover:text-white hover:bg-blue-600 hover:border-blue-500"
+
               onClick={() => exportSaveFile()}
             >
               Download Inventory File
-            </button>
+            </button></div>
           ) : null}
-        </div>
+        
       </div>
       <br />
         {dataArray ? <ListDisplay /> : null}

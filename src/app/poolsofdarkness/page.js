@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState } from "react";
 import {
@@ -154,7 +154,6 @@ export default function PoolsOfDarkness() {
         hearNoiseIndex={320}
         climbWallsIndex={321}
         readLanguagesIndex={322}
-
       />
     );
   }
@@ -170,7 +169,7 @@ export default function PoolsOfDarkness() {
     }
 
     let spellSlots = spellArray.map((item, index) => (
-      <div key={index} className="col-2">
+      <div key={index} className="mt-5">
         {item + 1}:{" "}
         <CharFunctions.LevelModule
           dataArray={dataArray}
@@ -182,7 +181,9 @@ export default function PoolsOfDarkness() {
 
     return (
       <>
-        {spellSlots}
+      <div className="flex flex-wrap gap-3">
+        {spellSlots}</div>
+        <br/>
         <h4>{props.magicFilter} Spells:</h4>{" "}
         <div>
           <CharFunctions.SpellModule
@@ -198,13 +199,20 @@ export default function PoolsOfDarkness() {
     );
   }
 
-  let splashImage = dataArray || inventoryLoaded===true ? null : (
-    <>
-    <h5 style={{marginBottom:20}}>To begin, upload a character file (.SAV) or an inventory file (.THG) from <em>Pools of Darkness</em>.</h5>
+  let splashImage =
+    dataArray || inventoryLoaded === true ? null : (
+      <>
+        <h5 style={{ marginBottom: 20 }}>
+          To begin, upload a character file (.SAV) or an inventory file (.THG)
+          from <em>Pools of Darkness</em>.
+        </h5>
 
-    <h6>Need somewhere to start? Try the <em>Pools of Darkness</em> <a href={"/files/podDefaultCharacters.zip"}>default characters</a>.</h6>
-    
-    <br />
+        <h5>
+          Need somewhere to start? Try the <em>Pools of Darkness</em>{" "}
+          <a href={"/files/podDefaultCharacters.zip"} className="text-blue-600">default characters</a>.
+        </h5>
+
+        <br />
         <br />
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 justify-items-center md:mx-10">
           <Image
@@ -235,15 +243,14 @@ export default function PoolsOfDarkness() {
           <Link href="/poolsofdarkness">
             <Image
               src={podCoverImage}
-              
               alt="pools of darkness"
               height={400}
               style={{ width: "auto" }}
             />
           </Link>
         </div>
-    </>
-  );
+      </>
+    );
 
   const characterAccordionItems = [
     { title: "Character Info", content: <CharInfoDisplay /> },
@@ -262,23 +269,29 @@ export default function PoolsOfDarkness() {
   ];
 
   return (
-    <div className="charEditBody">
-      <div className="row">
-      <div className="col-md-12 gx-0">
-
-        <Image style={{width:"100%"}}src={podBanner} alt="pools of darkness action" />
-
-        <h2 className="mainTitle">
-          Advanced Dungeons and Dragons: Pools of Darkness
-        </h2>
+    <div className="mb-60">
+      <div className="mb-20">
+        <div className="flex justify-center mt-10">
+          <Image
+            className="w-10/12"
+            src={podBanner}
+            alt="pools of darkness action"
+          />
         </div>
+        <h3
+          className="text-center text-3xl mt-10"
+          style={{ fontFamily: "IM-Fell" }}
+        >
+          Advanced Dungeons and Dragons: Pools of Darkness
+        </h3>
       </div>
-      <div className="row" style={{ marginTop: 20 }}>
-        <div className="col-md-6">
-          <h3 style={{ textAlign: "center" }}>Character Editor</h3>
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 justify-items-center">
+      <div className="w-10/12">
+          <h3 className="text-center">Character Editor</h3>
           <div className="mb-3">
             <input
-              className="form-control"
+            className="w-full file:border-solid file:border-2 file:rounded file:hover:text-white file:border-green-600 file:hover:border-solid file:py-2 file:px-2 file:hover:bg-green-600 file:bg-white  file:text-green-600 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+
               type="file"
               id="fileSelect"
               accept=".sav"
@@ -290,25 +303,29 @@ export default function PoolsOfDarkness() {
             />
           </div>
           {dataArray ? (
+            <div className="text-right">
             <button
-              className="btn downloadButton"
+            className="bg-transparent hover:bg-blue-600 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-600 hover:border-transparent rounded"
+
               onClick={() => exportSaveFile()}
             >
               Download Character File
-            </button>
+            </button></div>
           ) : null}
           <br />
           <p></p>
 
           {dataArray ? (
             <AccordionCustom accordionItems={characterAccordionItems} />
-            
           ) : null}
         </div>
-        <div className="col-md-6">
+        <div className="w-10/12">
           <h3 style={{ textAlign: "center" }}>Inventory Editor</h3>
 
-          <PodInventory inventoryLoaded={inventoryLoaded} setInventoryLoaded={setInventoryLoaded} />
+          <PodInventory
+            inventoryLoaded={inventoryLoaded}
+            setInventoryLoaded={setInventoryLoaded}
+          />
         </div>
       </div>
       <div

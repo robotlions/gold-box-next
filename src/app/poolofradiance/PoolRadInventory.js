@@ -66,10 +66,10 @@ export default function PoolRadInventory(props) {
   return (
     <>
       <div>
-        <div className="col-md">
+        
           <div className="mb-3">
             <input
-              className="file:border-solid file:border-2 file:rounded file:hover:text-white file:border-green-600 file:hover:border-solid file:py-2 file:px-2 file:hover:bg-green-600 file:bg-white  file:text-green-600 shadow w-full appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="w-full file:border-solid file:border-2 file:rounded file:hover:text-white file:border-green-600 file:hover:border-solid file:py-2 file:px-2 file:hover:bg-green-600 file:bg-white  file:text-green-600 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 
 
               type="file"
@@ -92,7 +92,7 @@ export default function PoolRadInventory(props) {
             </button>
             </div>
           ) : null}
-        </div>
+       
       </div>
       <br />
         {dataArray ? <ListDisplay /> : null}

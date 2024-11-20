@@ -80,7 +80,7 @@ export default function SilverBlades() {
     }
 
     let spellSlots = spellArray.map((item, index) => (
-      <div key={index} className="col-2">
+      <div key={index} className="mt-5">
         {item + 1}:{" "}
         <CharFunctions.LevelModule
           dataArray={dataArray}
@@ -92,7 +92,7 @@ export default function SilverBlades() {
 
     return (
       <>
-        <div className="flex gap-3">{spellSlots}</div>
+        <div className="flex flex-wrap gap-3">{spellSlots}</div>
         <br />
         <h5>{props.magicFilter} Spells:</h5>{" "}
         <div>
@@ -280,11 +280,12 @@ export default function SilverBlades() {
   return (
     <div className="mb-60">
       <div className="mb-20">
+        <div className="flex justify-center mt-10">
         <Image
-          style={{ width: "100%" }}
+          className="w-10/12"
           src={silverBladesBanner}
           alt="silver blades title screen"
-        />
+        /></div>
         <h3
           className="text-center text-3xl mt-10"
           style={{ fontFamily: "IM-Fell" }}
@@ -293,8 +294,8 @@ export default function SilverBlades() {
         </h3>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-15 mx-5">
-        <div className="w-11/12">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 justify-items-center">
+        <div className="w-10/12">
           <h3 className="text-center">Character Editor</h3>
           <div className="mb-3">
             <input
@@ -327,7 +328,7 @@ export default function SilverBlades() {
             </>
           ) : null}
         </div>
-        <div className="w-11/12">
+        <div className="w-10/12">
           <h3 style={{ textAlign: "center" }}>Inventory Editor</h3>
 
           <SilverBladesInventory
