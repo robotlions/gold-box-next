@@ -125,9 +125,9 @@ export default function BinaryTool() {
   }
 
   return (
-    <div className="container">
+    <div className="w-full">
       <div className="text-center">
-        <h2 style={{ textAlign: "center", marginBottom: 20 }}>
+        <h2 className="mt-20 mb-10">
           Binary File Tool
         </h2>
         <em className="text-center">
@@ -135,6 +135,7 @@ export default function BinaryTool() {
           values, or load a second file to compare the two side-by-side.
         </em>
       </div>
+      <br/><br/>
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 justify-items-center">
         <div className="w-10/12">
           <h5>File 1</h5>
