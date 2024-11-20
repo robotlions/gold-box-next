@@ -189,7 +189,7 @@ export function ItemEditModule(props) {
         </button>
         <button
           onClick={() => props.duplicateItem(props.item)}
-          className="w-40 hover:text-white hover:bg-blue-600"
+          className="w-40 hover:text-white hover:bg-blue-600 text-blue-600"
         >
           Duplicate Item
         </button>
@@ -201,7 +201,7 @@ export function ItemEditModule(props) {
     <div key={props.index} className="mb-5">
       <button
         onClick={() => toggleAccordion(props.index)}
-        className="flex justify-between items-center w-full py-4 px-6 text-left text-blue-500  hover:bg-gray-200 focus:outline-none text-lg"
+        className="flex justify-between items-center w-full py-4 px-6 text-left text-gray-600  hover:bg-gray-200 focus:outline-none text-lg"
       >
         {ammo > 0 ? ammo : null} {displayName1} {displayName2} {displayName3}
         <svg

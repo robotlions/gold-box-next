@@ -1,6 +1,5 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import Nav from "./ui/Nav";
 import NavBar from "./ui/NavBar";
 
 // const geistSans = localFont({
@@ -31,7 +30,6 @@ export default function RootLayout({ children }) {
       <body
         className={`antialiased`}
       >
-        {/* <Nav /> */}
         <NavBar />
         {children}
         <p className="text-center mb-20">Copyright {newYear} by <a href="https://chadmusick.com" className="text-blue-600 font-semibold">Chad Musick</a></p>

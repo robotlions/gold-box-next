@@ -33,7 +33,7 @@ const Navbar = () => {
         
         href={link.href}
         className={clsx(
-          'inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-2 px-4',
+          'inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-200 py-2 px-4 text-center',
           {
             'bg-sky-100 text-blue-600': pathname === link.href,
           },

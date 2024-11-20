@@ -354,7 +354,7 @@ export function AccordionCustom(props) {
         <div key={index}>
           <button
             onClick={() => toggleAccordion(index)}
-            className="flex justify-between items-center w-full py-4 px-6 text-left text-blue-500 hover:bg-gray-200 focus:outline-none text-lg"
+            className="flex justify-between items-center w-full py-4 px-6 text-left text-gray-600 hover:bg-gray-200 focus:outline-none text-lg"
           >
             <span>{item.title}</span>
             <svg
