@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+import retroComputer from "../../../public/images/retroComputer.png";
 
 export default function BinaryTool() {
   const [dataArray1, setDataArray1] = useState(null);
@@ -77,20 +79,20 @@ export default function BinaryTool() {
   function SearchDisplay() {
     let componentDisplay = searchArray.map((item, index) => (
       <div
-        className="row"
+        className="grid grid-cols-2 md:grid-cols-2"
         style={{ backgroundColor: index % 2 === 0 && "lightBlue" }}
         key={index}
       >
-        <div className="col-md-2">{item.index}</div>{" "}
-        <div className="col-md-2">{item.a1Val}</div>{" "}
+        <div>{item.index}</div>{" "}
+        <div >{item.a1Val}</div>{" "}
       </div>
     ));
 
     return searchArray.length === 0 ? null : (
       <>
-        <div className="row" style={{ fontWeight: "bold" }}>
-          <div className="col-md-2">Index</div>
-          <div className="col-md-2">File 1</div>
+        <div className="grid grid-cols-2 md:grid-cols-2" style={{ fontWeight: "bold" }}>
+          <div className="grid col-span-1">Index</div>
+          <div className="grid col-span-1">File 1</div>
         </div>
         {componentDisplay}
       </>
@@ -101,23 +103,23 @@ export default function BinaryTool() {
     // let mainDisplay = finalArray.map((item, index) => <div key={index}>{Object.keys(item)}</div>)
     let componentDisplay = compareArray.map((item, index) => (
       <div
-        className="row"
+        className="grid grid-cols-3 md:grid-cols-3"
         style={{ backgroundColor: index % 2 === 0 && "lightGray" }}
         key={index}
       >
-        <div className="col-md-2">{item.index}</div>{" "}
-        <div className="col-md-2">{item.a1Val}</div>{" "}
-        <div className="col-md-2">{item.a2Val} </div>
+        <div>{item.index}</div>{" "}
+        <div>{item.a1Val}</div>{" "}
+        <div>{item.a2Val} </div>
       </div>
     ));
 
     return compareArray.length === 0 ? null : (
       <>
         <div>No. of non-matching values: {compareArray.length}</div>
-        <div className="row" style={{ fontWeight: "bold" }}>
-          <div className="col-md-2">Index</div>
-          <div className="col-md-2">File 1</div>
-          <div className="col-md-2">File 2</div>
+        <div className="grid grid-cols-3 md:grid-cols-3" style={{ fontWeight: "bold" }}>
+          <div>Index</div>
+          <div>File 1</div>
+          <div>File 2</div>
         </div>
         {componentDisplay}
       </>
@@ -127,7 +129,10 @@ export default function BinaryTool() {
   return (
     <div className="w-full">
       <div className="text-center">
-        <h2 className="mt-20 mb-10">
+      <div className="flex justify-center mt-10">
+        <Image src={retroComputer} alt="retro computer" width={300}/>
+        </div>
+        <h2 className="mt-10 mb-10">
           Binary File Tool
         </h2>
         <em className="text-center">
@@ -140,7 +145,8 @@ export default function BinaryTool() {
         <div className="w-10/12">
           <h5>File 1</h5>
           <input
-            className="form-control"
+            className="w-full file:border-solid file:border-2 file:rounded file:hover:text-white file:border-green-500 file:hover:border-solid file:py-2 file:px-2 file:hover:bg-green-500 file:bg-white  file:text-green-500 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+
             type="file"
             id="fileSelect1"
             onChange={(e) => {
@@ -165,8 +171,9 @@ export default function BinaryTool() {
                     Search for value
                   </button>
                   <input
-                    className="form-control"
-                    type="number"
+                    className="file:border-solid file:border-2 file:rounded file:hover:text-white file:border-green-500 file:hover:border-solid file:py-2 file:px-2 file:hover:bg-green-500 file:bg-white  file:text-green-500 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+
+                    type="text"
                     id="searchTermInput"
                     onChange={(e) => {
                       setSearchTerm(e.target.value);
@@ -183,7 +190,8 @@ export default function BinaryTool() {
             <>
               <h5>File2</h5>
               <input
-                className="form-control"
+                className="w-full file:border-solid file:border-2 file:rounded file:hover:text-white file:border-green-500 file:hover:border-solid file:py-2 file:px-2 file:hover:bg-green-500 file:bg-white  file:text-green-500 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+
                 type="file"
                 id="fileSelect2"
                 onChange={(e) => {
