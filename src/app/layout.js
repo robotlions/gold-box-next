@@ -16,6 +16,13 @@ import NavBar from "./ui/NavBar";
 export const metadata = {
   title: "Curse of the Secret Pools!",
   description: "A NextJS app for editing saved games from the classic Dungons and Drgaons Gold Box PC games.",
+  openGraph: {
+    title:"Curse of the Secret Pools!",
+    description: "A web-based app for modifying characters from the classic Dungeons and Dragons gold box PC games.",
+    url: "https://goldbox.robotlions.com",
+    type: "website",
+    siteName: "Curse of the Secret Pools!",
+  }
 };
 
 const newDate = new Date();

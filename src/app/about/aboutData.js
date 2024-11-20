@@ -2,33 +2,36 @@ export const accordionItems = [
   {
     title: "What is this?",
     content:
-      "This is a web-based app, written in React JS, for editing saved-game files from the Dungeons and Dragons 'gold box' games.",
+      "This is a web-based app, written in React with Next JS, for editing saved-game files from the Dungeons and Dragons 'gold box' games.",
   },
   {
     title: "What are the gold box games?",
-    content: `
-                  The gold box games were a series of role-playing games created by
-                  Strategic Simulations, Inc. in the late 1980s through early 1990s.
-                  All the games were based on the same engine, which gives us - hackers from the future - the ability to edit many
-                  different games with a single app.`,
+    content: (
+      <p>
+        The gold box games were a series of role-playing games created by{" "}
+        <a
+          href="https://en.wikipedia.org/wiki/Strategic_Simulations"
+          className="text-blue-600 font-semibold"
+        >
+          Strategic Simulations, Inc.
+        </a>{" "}
+        in the late 1980s through early 1990s. Although there were several
+        games, they all ran on the same engine, which gives us - hackers from
+        the future - the ability to edit many different games with a single app.
+      </p>
+    ),
   },
 
   {
     title: `How does this editor work?`,
 
     content: `
-                      The games store a character as one file and that character's
-                      inventory as another. These are simple binary files, with each
+                      The games save characters and inventories as binary files, with each
                       byte corresponding to an in-game value. The editor allows you to
                       change the values of specific bytes to produce, if you wish,
                       demi-gods with overpowered weapons and limitless wealth.`,
   },
 
-  {
-    title: `Who are you? How'd you get in here?`,
-    content: `
-                          I'm a locksmith. And I'm a locksmith.`,
-  },
   {
     title: `Why only four of the gold box games?`,
     content: `
@@ -40,7 +43,11 @@ export const accordionItems = [
               Because I was in middle school and I wasn't a web developer and
               I didn't know JavaScript and JavaScript didn't exist.`,
   },
-
+  {
+    title: `Who are you? How'd you get in here?`,
+    content: `
+                          I'm a locksmith. And I'm a locksmith.`,
+  },
   {
     title: `Is the source code available?`,
     content: (
@@ -61,7 +68,10 @@ export const accordionItems = [
 
     content: (
       <p>
-        Gog.com has several collections of the various D&D games, but{" "}
+        <a href="https://gog.com" className="text-blue-600 font-semibold">
+          Gog.com
+        </a>{" "}
+        has several collections of the various D&D games, but{" "}
         <a
           href="https://www.gog.com/en/game/forgotten_realms_the_archives_collection_two"
           className="text-blue-600 font-semibold"
@@ -80,27 +90,23 @@ export const accordionItems = [
         <li>Back up your files.</li>
         <li>
           This app edits only character and inventory files. Other in-game
-          values such as party location and mission status are stored in a DAT
-          file which is outside the scope of this app.
+          values such as party location and mission status are stored elsewhere.
         </li>
         <li>
           Pushing certain values too far will break the game, especially if the
-          value depends on an AD&D reference table. For example, character
-          ability scores in AD&D max out at 18. If you give your character an 85
-          charisma, the game won't know how to handle that number because it's
-          not on the original tables.
+          value depends on an AD&D reference table. For example, because character
+          ability scores in AD&D max out at 18, if you give your character an 85
+          charisma, weird stuff will happen.
         </li>
         <li>
           Most of the values can't exceed 255, unless they're obviously meant to
           be large numbers, such as experience and wealth.
         </li>
         <li>
-          Certain values - such as saving
-          throws and thief skills - come directly from the AD&D tables and
-          are determined by the character's level and modifiers. These values
-          are set by the game automatically on load. So even though you can
-          change these values with this editor, the game will reset them to
-          their "correct" values.
+          Certain values - such as saving throws and thief skills - come
+          directly from the AD&D tables and are determined by the character's
+          level and modifiers. These values are set by the game automatically on
+          load. So even though you can change them with this editor, the values will reset when the game starts.
         </li>
         <li>
           Where possible, the integer input fields have minimum and maximum
@@ -130,9 +136,9 @@ export const accordionItems = [
         <br />
         <h4>Tips for editing inventory</h4>
         <li>
-          Inventory items can't be named just any string of
-          text. They must be renamed by selecting from the dropdown menus of
-          pre-programmed descriptors.
+          Inventory items can't be named just any string of text. They must be
+          renamed by selecting from the dropdown menus of pre-programmed
+          descriptors.
         </li>
         <li>
           Each item has three slots for special effects. For the most part these
@@ -171,10 +177,21 @@ export const accordionItems = [
         </p>
         <p>
           You can reach me at{" "}
-          <a href="mailto:info@robotlions.com" className="text-blue-600 font-semibold">info@robotlions.com</a>
+          <a
+            href="mailto:info@robotlions.com"
+            className="text-blue-600 font-semibold"
+          >
+            info@robotlions.com
+          </a>
         </p>
         <p>
-          My main site is <a href="https://chadmusick.com" className="text-blue-600 font-semibold">chadmusick.com</a>
+          My main site is{" "}
+          <a
+            href="https://chadmusick.com"
+            className="text-blue-600 font-semibold"
+          >
+            chadmusick.com
+          </a>
         </p>
       </>
     ),
@@ -194,25 +211,51 @@ export const accordionItems = [
         <p>All cover art © Wizards of the Coast, I assume.</p>
         <p>
           <em>Pool of Radiance</em> and <em>Curse of the Azure Bonds</em> cover
-          art by <a href="https://clydecaldwell.com/" className="text-blue-600 font-semibold">Clyde Caldwell</a>
+          art by{" "}
+          <a
+            href="https://clydecaldwell.com/"
+            className="text-blue-600 font-semibold"
+          >
+            Clyde Caldwell
+          </a>
         </p>
         <p>
           <em>Secret of the Silver Blades</em> cover art by{" "}
-          <a href="https://larryelmore.com/store/" className="text-blue-600 font-semibold">Larry Elmore</a>
+          <a
+            href="https://larryelmore.com/store/"
+            className="text-blue-600 font-semibold"
+          >
+            Larry Elmore
+          </a>
         </p>
         <p>
           <em>Pools of Darkness</em> cover art by{" "}
-          <a href="https://www.keithparkinson.com/artwork/" className="text-blue-600 font-semibold">Keith Parkinson</a>.
+          <a
+            href="https://www.keithparkinson.com/artwork/"
+            className="text-blue-600 font-semibold"
+          >
+            Keith Parkinson
+          </a>
+          .
         </p>
         <p>
-          My thanks and admiration go to Joonas Hirvonen for his mind-boggling work
-          on <a href="https://www.gbc.zorbus.net/" className="text-blue-600 font-semibold">Gold Box Companion</a>.
-          Seriously, if you're into these games, install GBC. It's the gold
+          My thanks and admiration go to Joonas Hirvonen for his mind-boggling
+          work on{" "}
+          <a
+            href="https://www.gbc.zorbus.net/"
+            className="text-blue-600 font-semibold"
+          >
+            Gold Box Companion
+          </a>
+          . Seriously, if you're into these games, install GBC. It's the gold
           standard of gold box.
         </p>
         <p>
           Also, massive credit goes to{" "}
-          <a href="https://gamefaqs.gamespot.com/community/ssjlee9" className="text-blue-600 font-semibold">
+          <a
+            href="https://gamefaqs.gamespot.com/community/ssjlee9"
+            className="text-blue-600 font-semibold"
+          >
             Stephen S. Lee
           </a>{" "}
           for his comprehensive game guides, which were indespensible for

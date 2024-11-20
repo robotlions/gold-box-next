@@ -17,8 +17,11 @@ const Navbar = () => {
     },
     { linkName: "Secret of the Silver Blades", href: "/silverblades" },
     {linkName: "Pools of Darkness", href: "/poolsofdarkness"},
+    {linkName: "Binary Tool", href:"/binarytool"},
     {linkName: "About", href: "/about"},
-    {linkName: "robotlions.com", href:"https://robotlions.com"}
+
+    {linkName: "robotlions.com", href:"https://robotlions.com"},
+
     
     
   ];
