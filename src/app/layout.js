@@ -24,6 +24,7 @@ export const metadata = {
     url: "https://goldbox.robotlions.com",
     type: "website",
     siteName: "Curse of the Secret Pools!",
+    image: "/opengraph-image.jpg",
   }
 };
 

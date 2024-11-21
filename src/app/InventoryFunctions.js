@@ -341,3 +341,58 @@ export function ItemWeightModule(props) {
 
   return editDisplay;
 }
+
+export function InventoryTypeDisplay(props){
+
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleAccordion = (index) => {
+    setOpenIndex(index === openIndex ? null : index);
+  };
+
+const listDisplay = Object.entries(props.gameItemValues).map(([key, value])=>{return(
+  <p key={key}>{key} : {value}</p>
+)
+})
+
+  return(<>
+  <p className="mb-2">Object types are determined by a numeric value. Below are the object types for {props.gameName}</p>
+  <div key={"valueAccordion"}>
+          <button
+            onClick={() => toggleAccordion("valueAccordion")}
+            className="flex justify-between items-center w-full py-4 px-6 text-left text-gray-600 hover:bg-gray-200 focus:outline-none text-lg"
+          >
+            <span><p>Inventory Types for {props.gameName}</p></span>
+            <svg
+              className={`w-5 h-5 transform transition-transform ${
+                openIndex === "valueAccordion" ? "rotate-180" : ""
+              }`}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </button>
+          <div
+            className={`overflow-hidden transition-all duration-300 ${
+              openIndex === "valueAccordion" ? "max-h-screen" : "max-h-0"
+            }`}
+          >
+            <div className="px-6 py-4 text-gray-600 text-base"> <div className="grid grid-cols-3 md:grid-cols-3">
+   {listDisplay}
+   </div></div>
+          </div>
+          <br/>
+        </div>
+    
+   
+    </>
+  )
+}

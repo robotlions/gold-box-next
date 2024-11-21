@@ -96,6 +96,7 @@ export default function PoolRadInventory(props) {
       </div>
       <br />
         {dataArray ? <ListDisplay /> : null}
+        {dataArray ? <InvFunctions.InventoryTypeDisplay gameName={"Pool of Radiance"} gameItemValues={poolRadItemValues} /> : null}
     </>
   );
 }
