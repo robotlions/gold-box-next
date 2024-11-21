@@ -265,7 +265,7 @@ export default function PoolOfRadiance() {
   return (
     <div className="mb-60">
       <div className="mb-20">
-        <div className="flex justify-center mt-10">
+        <div className="flex justify-center pt-10">
         <Image
           className="w-10/12"
           src={poolRadBanner}
@@ -283,7 +283,7 @@ export default function PoolOfRadiance() {
           <h3 className="text-center">Character Editor</h3>
           <div className="mb-3">
             <input
-              className="w-full file:border-solid file:border-2 file:rounded file:hover:text-white file:border-green-500 file:hover:border-solid file:py-2 file:px-2 file:hover:bg-green-500 file:bg-white  file:text-green-500 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="bg-white w-full file:border-solid file:border-2 file:rounded file:hover:text-white file:border-green-500 file:hover:border-solid file:py-2 file:px-2 file:hover:bg-green-500 file:bg-white  file:text-green-500 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="file"
               id="fileSelect"
               accept=".sav"

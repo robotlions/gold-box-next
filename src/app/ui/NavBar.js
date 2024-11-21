@@ -34,9 +34,9 @@ const Navbar = () => {
         prefetch={false}
         href={link.href}
         className={clsx(
-          'inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-200 py-2 px-4 text-center',
+          'inline-block rounded hover:border-gray-200 text-white hover:bg-gray-500 py-2 px-4 text-center',
           {
-            'bg-sky-100 text-blue-600': pathname === link.href,
+            'bg-gray-700 text-white font-semibold': pathname === link.href,
           },
         )}
         >
@@ -48,8 +48,8 @@ const Navbar = () => {
     )};
 
   return (
-    <nav className=" text-black mt-5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className=" text-white bg-black pt-5 pb-5">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -62,10 +62,10 @@ const Navbar = () => {
           <div className="flex md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              className="border-gray-400 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white mr-5"
               aria-expanded={isOpen}
             >
-              <span className="sr-only">Open main menu</span>
+              
               {/* Icon */}
               {isOpen ? (
                 <svg
@@ -105,7 +105,7 @@ const Navbar = () => {
           <div className="hidden md:flex md:items-center md:space-x-4">
           <ul className="flex justify-between items-center mx-5 text-base">
                 <LinkMap />
-                <a href="https://robotlions.com" className="ml-2 text-gray-600">robotlions.com</a>
+                <a href="https://robotlions.com" className="ml-2 text-white">robotlions.com</a>
             </ul>
           </div>
         </div>

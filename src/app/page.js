@@ -31,7 +31,7 @@ export default function Home() {
   }
 
   return (
-    <div className="mt-10 mb-20">
+    <div className="mt-20 mb-20">
       <h2 className="text-center mb-10 font-bold text-3xl">
         Online editor for the Advanced Dungeons and Dragons gold box games.
       </h2>

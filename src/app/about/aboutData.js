@@ -54,7 +54,7 @@ export const accordionItems = [
       <span>
         Absolutely.{" "}
         <a
-          href="https://github.com/robotlions/goldboxeditor"
+          href="https://github.com/robotlions/gold-box-next"
           className="text-blue-600 font-semibold"
         >
           Here's the GitHub.
@@ -185,12 +185,12 @@ export const accordionItems = [
           </a>
         </p>
         <p>
-          My main site is{" "}
+          My main development site is{" "}
           <a
-            href="https://chadmusick.com"
+            href="https://robotlions.com"
             className="text-blue-600 font-semibold"
           >
-            chadmusick.com
+            robotlions.com
           </a>
         </p>
       </>

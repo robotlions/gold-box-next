@@ -37,11 +37,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
       
       <body
-        className={`antialiased`}
+        className={`antialiased bg-gray-50`}
       >
+        <h1 className="hidden">Dungeons and Dragons Forgotten Realms Gold Box PC Video games character editor. Hack edit cheat saved games for Pool of Radiance, Curse of the Azure Bonds, Secret of the Silver Blades, Pools of Darkness. Forgotten Realms, Dungeons and Dragons, Advanced Dungeons and Dragons, gold box games.</h1>
         <GoogleAnalytics gaId="G-SF7K44XDRR" />
         <NavBar />
         {children}
+        <p className="text-center mb-5">Do you like Dungeons and Dragons? Then you might like our <a href="https://dnd35.robotlions.com" className="text-blue-600 font-semibold">D&D 3.5 Character Creator</a></p>
         <p className="text-center mb-20">Copyright {newYear} by <a href="https://chadmusick.com" className="text-blue-600 font-semibold">Chad Musick</a></p>
       </body>
     </html>

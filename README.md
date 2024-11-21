@@ -19,7 +19,7 @@ In your terminal of choice, navigate to this app's directory.
 
 To install all dependencies:
 
-*npm install*
+*pnpm add*
 
 Once all dependencies are installed, run the app locally in a development environment with:
 

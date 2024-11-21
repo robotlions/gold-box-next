@@ -10,6 +10,8 @@ export default function BinaryTool() {
   const [compareArray, setCompareArray] = useState([]);
   const [searchArray, setSearchArray] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchHeadline, setSearchHeadline] = useState("")
+  const [compareHeadline, setCompareHeadline] = useState("")
 
   function loadFile1(file) {
     // if (document.querySelector("#fileSelect").value === "") {
@@ -48,6 +50,8 @@ export default function BinaryTool() {
   }
 
   function doCompare() {
+    setCompareHeadline("");
+    setCompareArray([]);
     let resultsArray = [];
 
     let array1 = Array.from(dataArray1);
@@ -58,11 +62,18 @@ export default function BinaryTool() {
         resultsArray.push({ index: [i], a1Val: array1[i], a2Val: array2[i] });
       }
     }
-
+    if(resultsArray.length==0){
+      setCompareHeadline("No results found")
+    }
+    else{
+      setCompareHeadline("Comparison Results")
     setCompareArray(resultsArray);
+    }
   }
 
   function doSearch() {
+    setSearchArray([]);
+    setSearchHeadline("");
     let resultsArray = [];
 
     let array1 = Array.from(dataArray1);
@@ -72,8 +83,13 @@ export default function BinaryTool() {
         resultsArray.push({ index: [i], a1Val: array1[i] });
       }
     }
-
+    if(resultsArray.length==0){
+      setSearchHeadline("No results found")
+    }
+    else{
+      setSearchHeadline("Search Results"),
     setSearchArray(resultsArray);
+    }
   }
 
   function SearchDisplay() {
@@ -130,17 +146,17 @@ export default function BinaryTool() {
   }
 
   return (
-    <div className="w-full">
+    <div className="w-full bg-slate-100">
       <div className="text-center">
-        <div className="flex justify-center mt-10">
+        {/* <div className="flex justify-center mt-10">
           <Image
             src={retroComputer}
             alt="retro computer"
             width={300}
             className="shadow"
           />
-        </div>
-        <h2 className="mt-10 mb-10">Binary File Tool</h2>
+        </div> */}
+        <h2 className="pt-10 mt-10 mb-10">Binary File Tool</h2>
         <em className="text-center">
           To use: load a save or inventory file. Then search that file for
           values, or load a second file to compare the two side-by-side.
@@ -152,7 +168,7 @@ export default function BinaryTool() {
         <div className="w-10/12">
           <h5>File 1</h5>
           <input
-            className="w-full file:border-solid file:border-2 file:rounded file:hover:text-white file:border-green-500 file:hover:border-solid file:py-2 file:px-2 file:hover:bg-green-500 file:bg-white  file:text-green-500 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="w-full file:border-solid file:border-2 file:rounded file:hover:text-white file:border-green-500 file:hover:border-solid file:py-2 file:px-2 file:hover:bg-green-500 file:bg-white  file:text-green-500 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-white"
             type="file"
             id="fileSelect1"
             onChange={(e) => {
@@ -165,13 +181,13 @@ export default function BinaryTool() {
           {dataArray1 ? (
             <div className="input-group">
               <button
-                className="bg-transparent hover:bg-blue-500 text-blue-500 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+                className="bg-white hover:bg-blue-500 text-blue-500 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
                 onClick={() => doSearch()}
               >
                 Search for value
               </button>
               <input
-                className="file:border-solid file:border-2 file:rounded file:hover:text-white file:border-green-500 file:hover:border-solid file:py-2 file:px-2 file:hover:bg-green-500 file:bg-white  file:text-green-500 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="file:border-solid file:border-2 file:rounded file:hover:text-white file:border-green-500 file:hover:border-solid file:py-2 file:px-2 file:hover:bg-green-500 file:bg-white  file:text-green-500 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-white"
                 type="text"
                 id="searchTermInput"
                 placeholder="input value"
@@ -188,7 +204,7 @@ export default function BinaryTool() {
             <>
               <h5>File2</h5>
               <input
-                className="w-full file:border-solid file:border-2 file:rounded file:hover:text-white file:border-green-500 file:hover:border-solid file:py-2 file:px-2 file:hover:bg-green-500 file:bg-white  file:text-green-500 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="bg-white w-full file:border-solid file:border-2 file:rounded file:hover:text-white file:border-green-500 file:hover:border-solid file:py-2 file:px-2 file:hover:bg-green-500 file:bg-white  file:text-green-500 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 type="file"
                 id="fileSelect2"
                 onChange={(e) => {
@@ -214,11 +230,12 @@ export default function BinaryTool() {
 
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 justify-items-center mt-20 mb-20">
         <div className="w-10/12">
-          <h3>Search Results</h3>
+         
+          <h3>{searchHeadline}</h3>
           <SearchDisplay />
         </div>
         <div className="w-10/12">
-          <h3>Comparison Results</h3>
+          <h3>{compareHeadline}</h3>
           <CompareDisplay />
         </div>
       </div>
