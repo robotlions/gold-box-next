@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Curse of the Secret Pools!
+## Web-based editor for the Advanced Dungeons and Dragons Gold Box games.
 
-## Getting Started
+This is version 3.0, built in Next JS.
 
-First, run the development server:
+The GitHub repository for 2.0, built in Vite, is [here](https://github.com/robotlions/gold-box-editor).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The GitHub repository for 1.0, build in the now-depracated create-react-app, is [here](https://github.com/robotlions/goldboxeditor).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Found live online at [goldbox.robotlions.com](https:/goldbox.robotlions.com).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## To run locally
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+If you haven't already, install [NodeJs](https://nodejs.org/en).
 
-## Learn More
+Then copy this app's source code to your local machine either by cloning the repository or by copying the code directly.
 
-To learn more about Next.js, take a look at the following resources:
+In your terminal of choice, navigate to this app's directory.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To install all dependencies:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+*npm install*
 
-## Deploy on Vercel
+Once all dependencies are installed, run the app locally in a development environment with:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*pnpm dev*
