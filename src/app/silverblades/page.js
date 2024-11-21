@@ -224,6 +224,7 @@ export default function SilverBlades() {
         <br />
         <br />
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 justify-items-center md:mx-10">
+          <Link prefetch={false} href="/poolofradiance">
           <Image
             className="opacity-50 hover:scale-110"
             src={poolRadCoverImage}
@@ -231,7 +232,8 @@ export default function SilverBlades() {
             height={400}
             
           />
-          <Link href="/azurebonds">
+          </Link>
+          <Link prefetch={false} href="/azurebonds">
             <Image
               src={azureCoverImage}
               className="opacity-50 hover:scale-110"
@@ -240,15 +242,15 @@ export default function SilverBlades() {
               
             />
           </Link>
-          <Link href="/silverblades">
+          
             <Image
               src={silverBladesCoverImage}
               alt="secret of the silver blades"
               height={400}
               
             />
-          </Link>
-          <Link href="/poolsofdarkness">
+          
+          <Link prefetch={false} href="/poolsofdarkness">
             <Image
               src={podCoverImage}
               className="opacity-50 hover:scale-110"

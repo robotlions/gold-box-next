@@ -19,7 +19,7 @@ import azureCoverImage from "../../../public/images/azure800.jpg";
 import silverBladesCoverImage from "../../../public/images/silverBlades800.jpg";
 import poolRadCoverImage from "../../../public/images/poolRadCover800.jpg";
 
-export default function PoolRadMain() {
+export default function PoolOfRadiance() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [dataArray, setDataArray] = useState(null);
   const [inventoryLoaded, setInventoryLoaded] = useState(false);
@@ -215,7 +215,7 @@ export default function PoolRadMain() {
             height={400}
             
           />
-          <Link href="/azurebonds">
+          <Link prefetch={false} href="/azurebonds">
             <Image
               src={azureCoverImage}
               className="opacity-50 hover:scale-110"
@@ -224,7 +224,7 @@ export default function PoolRadMain() {
               
             />
           </Link>
-          <Link href="/silverblades">
+          <Link prefetch={false} href="/silverblades">
             <Image
               src={silverBladesCoverImage}
               className="opacity-50 hover:scale-110"
@@ -233,7 +233,7 @@ export default function PoolRadMain() {
               
             />
           </Link>
-          <Link href="/poolsofdarkness">
+          <Link prefetch={false} href="/poolsofdarkness">
             <Image
               src={podCoverImage}
               className="opacity-50 hover:scale-110"

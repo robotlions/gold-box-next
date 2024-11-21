@@ -31,7 +31,7 @@ const Navbar = () => {
     return (
       <li key={link.linkName}>
       <Link
-        
+        prefetch={false}
         href={link.href}
         className={clsx(
           'inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-200 py-2 px-4 text-center',
@@ -53,7 +53,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="text-xl font-bold">
+            <Link href="/" className="text-xl font-bold" prefetch={false}>
              <h6>Curse of the Secret Pools!</h6>
             </Link>
           </div>
@@ -115,26 +115,26 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <Link href="/" className="block text-black px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">
+            <Link prefetch={false} href="/" className="block text-black px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">
               Home
             </Link>
-            <Link href="/poolofradiance" className="block text-black px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">
+            <Link prefetch={false} href="/poolofradiance" className="block text-black px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">
               Pool of Radiance
             </Link>
-            <Link href="/azurebonds" className="block text-black px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">
+            <Link prefetch={false} href="/azurebonds" className="block text-black px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">
               Curse of the Azure Bonds
             </Link>
-            <Link href="/silverblades" className="block text-black px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">
+            <Link prefetch={false} href="/silverblades" className="block text-black px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">
               Secret of the Silver Blades
             </Link>
             
-            <Link href="/poolsofdarkness" className="block text-black px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">
+            <Link prefetch={false} href="/poolsofdarkness" className="block text-black px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">
               Pools of Darkness
             </Link>
-            <Link href="/about" className="block text-black px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">
+            <Link prefetch={false} href="/about" className="block text-black px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">
               About
             </Link>
-            <Link href="https://robotlions.com" className="block text-black px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">
+            <Link prefetch={false} href="https://robotlions.com" className="block text-black px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">
               robotlions.com
             </Link>
           </div>
