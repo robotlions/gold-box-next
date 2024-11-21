@@ -5,7 +5,7 @@ This is version 3.0, built in Next JS.
 
 The GitHub repository for 2.0, built in Vite, is [here](https://github.com/robotlions/gold-box-editor).
 
-The GitHub repository for 1.0, build in the now-depracated create-react-app, is [here](https://github.com/robotlions/goldboxeditor).
+The GitHub repository for 1.0, build in the now-deprecated create-react-app, is [here](https://github.com/robotlions/goldboxeditor).
 
 Found live online at [goldbox.robotlions.com](https:/goldbox.robotlions.com).
 
