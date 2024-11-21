@@ -94,6 +94,7 @@ export default function AzureInventory(props) {
       </div>
       <br />
         {dataArray ? <ListDisplay /> : null}
+        {dataArray ? <InvFunctions.InventoryTypeDisplay gameName={"Curse of the Azure Bonds"} gameItemValues={azureItemValues} /> : null}
     </>
   );
 }

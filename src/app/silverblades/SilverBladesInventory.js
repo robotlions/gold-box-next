@@ -96,6 +96,8 @@ export default function SilverBladesInventory(props) {
       </div>
       <br />
       {dataArray ? <ListDisplay /> : null}
+      {dataArray ? <InvFunctions.InventoryTypeDisplay gameName={"Secret of the Silver Blades"} gameItemValues={SilverBladesItemValues} /> : null}
+
     </>
   );
 }

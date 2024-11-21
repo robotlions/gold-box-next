@@ -95,6 +95,8 @@ export default function PodInventory(props) {
       </div>
       <br />
         {dataArray ? <ListDisplay /> : null}
+      {dataArray ? <InvFunctions.InventoryTypeDisplay gameName={"Pools of Darkness"} gameItemValues={podItemValues} /> : null}
+
     </>
   );
 }
