@@ -83,14 +83,16 @@ export default function BinaryTool() {
         style={{ backgroundColor: index % 2 === 0 && "lightBlue" }}
         key={index}
       >
-        <div>{item.index}</div>{" "}
-        <div >{item.a1Val}</div>{" "}
+        <div>{item.index}</div> <div>{item.a1Val}</div>{" "}
       </div>
     ));
 
     return searchArray.length === 0 ? null : (
       <>
-        <div className="grid grid-cols-2 md:grid-cols-2" style={{ fontWeight: "bold" }}>
+        <div
+          className="grid grid-cols-2 md:grid-cols-2"
+          style={{ fontWeight: "bold" }}
+        >
           <div className="grid col-span-1">Index</div>
           <div className="grid col-span-1">File 1</div>
         </div>
@@ -107,16 +109,17 @@ export default function BinaryTool() {
         style={{ backgroundColor: index % 2 === 0 && "lightGray" }}
         key={index}
       >
-        <div>{item.index}</div>{" "}
-        <div>{item.a1Val}</div>{" "}
-        <div>{item.a2Val} </div>
+        <div>{item.index}</div> <div>{item.a1Val}</div> <div>{item.a2Val} </div>
       </div>
     ));
 
     return compareArray.length === 0 ? null : (
       <>
         <div>No. of non-matching values: {compareArray.length}</div>
-        <div className="grid grid-cols-3 md:grid-cols-3" style={{ fontWeight: "bold" }}>
+        <div
+          className="grid grid-cols-3 md:grid-cols-3"
+          style={{ fontWeight: "bold" }}
+        >
           <div>Index</div>
           <div>File 1</div>
           <div>File 2</div>
@@ -129,60 +132,55 @@ export default function BinaryTool() {
   return (
     <div className="w-full">
       <div className="text-center">
-      <div className="flex justify-center mt-10">
-        <Image src={retroComputer} alt="retro computer" width={300}/>
+        <div className="flex justify-center mt-10">
+          <Image
+            src={retroComputer}
+            alt="retro computer"
+            width={300}
+            className="shadow"
+          />
         </div>
-        <h2 className="mt-10 mb-10">
-          Binary File Tool
-        </h2>
+        <h2 className="mt-10 mb-10">Binary File Tool</h2>
         <em className="text-center">
           To use: load a save or inventory file. Then search that file for
           values, or load a second file to compare the two side-by-side.
         </em>
       </div>
-      <br/><br/>
+      <br />
+      <br />
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 justify-items-center">
         <div className="w-10/12">
           <h5>File 1</h5>
           <input
             className="w-full file:border-solid file:border-2 file:rounded file:hover:text-white file:border-green-500 file:hover:border-solid file:py-2 file:px-2 file:hover:bg-green-500 file:bg-white  file:text-green-500 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-
             type="file"
             id="fileSelect1"
             onChange={(e) => {
               loadFile1(e.target.files[0]);
             }}
           />
-          {dataArray1 && dataArray2 ? (
-            <div className="w-10/12">
-              <button className="btn btn-primary" onClick={() => doCompare()}>
-                Compare files
+          <br />
+
+          <br />
+          {dataArray1 ? (
+            <div className="input-group">
+              <button
+                className="bg-transparent hover:bg-blue-500 text-blue-500 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+                onClick={() => doSearch()}
+              >
+                Search for value
               </button>
+              <input
+                className="file:border-solid file:border-2 file:rounded file:hover:text-white file:border-green-500 file:hover:border-solid file:py-2 file:px-2 file:hover:bg-green-500 file:bg-white  file:text-green-500 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                type="text"
+                id="searchTermInput"
+                placeholder="input value"
+                onChange={(e) => {
+                  setSearchTerm(e.target.value);
+                }}
+              />
             </div>
           ) : null}
-          <div className="row">
-            <div className="col-md-6">
-              {dataArray1 ? (
-                <div className="input-group">
-                  <button
-                    className="input-group-prepend btn btn-primary"
-                    onClick={() => doSearch()}
-                  >
-                    Search for value
-                  </button>
-                  <input
-                    className="file:border-solid file:border-2 file:rounded file:hover:text-white file:border-green-500 file:hover:border-solid file:py-2 file:px-2 file:hover:bg-green-500 file:bg-white  file:text-green-500 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-
-                    type="text"
-                    id="searchTermInput"
-                    onChange={(e) => {
-                      setSearchTerm(e.target.value);
-                    }}
-                  />
-                </div>
-              ) : null}
-            </div>
-          </div>
         </div>
 
         <div className="w-10/12">
@@ -191,7 +189,6 @@ export default function BinaryTool() {
               <h5>File2</h5>
               <input
                 className="w-full file:border-solid file:border-2 file:rounded file:hover:text-white file:border-green-500 file:hover:border-solid file:py-2 file:px-2 file:hover:bg-green-500 file:bg-white  file:text-green-500 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-
                 type="file"
                 id="fileSelect2"
                 onChange={(e) => {
@@ -200,17 +197,29 @@ export default function BinaryTool() {
               />
             </>
           ) : null}
+          <br />
+          <br />
+          {dataArray1 && dataArray2 ? (
+            <div className="w-10/12">
+              <button
+                className="bg-transparent hover:bg-blue-500 text-blue-500 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+                onClick={() => doCompare()}
+              >
+                Compare files
+              </button>
+            </div>
+          ) : null}
         </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 justify-items-center mt-20 mb-20">
         <div className="w-10/12">
-          <h3>Comparison Results</h3>
-          <CompareDisplay />
-        </div>
-        <div className="w-10/12">
           <h3>Search Results</h3>
           <SearchDisplay />
+        </div>
+        <div className="w-10/12">
+          <h3>Comparison Results</h3>
+          <CompareDisplay />
         </div>
       </div>
     </div>
