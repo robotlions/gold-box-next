@@ -7,11 +7,24 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 const newDate = new Date();
 const newYear = newDate.getFullYear();
 
+export const metadata = {
+  metadataBase: new URL('https://goldbox.robotlions.com'),
+  title: "Curse of the Secret Pools!",
+  description: "A NextJS app for editing saved games from the classic Dungons and Drgaons Gold Box PC games.",
+  openGraph: {
+    title:"Curse of the Secret Pools!",
+    description: "A web-based app for modifying characters from the classic Dungeons and Dragons gold box PC games.",
+    url: "https://goldbox.robotlions.com",
+    type: "website",
+    siteName: "Curse of the Secret Pools!",
+  }
+};
+
 export default function RootLayout({ children }) {
   return (
     <>
       <html lang="en">
-        <head>
+        {/* <head>
           <title>Curse of the Secret Pools!</title>
           <meta
             name="description"
@@ -28,7 +41,7 @@ export default function RootLayout({ children }) {
             property="og:description"
             content="A website for editing characters from the Advanced Dungeons and Dragons 'Gold Box' series of video games"
           />
-        </head>
+        </head> */}
 
         <body className={`antialiased bg-gray-50`}>
           <h1 className="hidden">
