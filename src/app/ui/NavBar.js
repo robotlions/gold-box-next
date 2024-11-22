@@ -18,7 +18,7 @@ const Navbar = () => {
     { linkName: "Secret of the Silver Blades", href: "/silverblades" },
     {linkName: "Pools of Darkness", href: "/poolsofdarkness"},
     {linkName: "Binary Tool", href:"/binarytool"},
-    {linkName: "About", href: "/about"},
+    {linkName: "About This Site", href: "/about"},
 
 
     
@@ -106,7 +106,7 @@ const Navbar = () => {
           <div className="hidden md:flex md:items-center md:space-x-4">
           <ul className="flex justify-between items-center mx-5 text-base">
                 <LinkMap />
-                <Link href="https://robotlions.com" >robotlions.com</Link>
+                <Link href="https://robotlions.com" className="font-semibold ml-5">robotlions.com</Link>
             </ul>
           </div>
         </div>
