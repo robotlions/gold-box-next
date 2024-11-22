@@ -215,7 +215,7 @@ export default function PoolsOfDarkness() {
         <br />
         <br />
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 justify-items-center md:mx-10">
-          <Link prefetch={false} href="/poolofradiance">
+          <Link  href="/poolofradiance">
           <Image
             src={poolRadCoverImage}
             className="opacity-50 hover:scale-110"
@@ -224,7 +224,7 @@ export default function PoolsOfDarkness() {
             
           />
           </Link>
-          <Link prefetch={false} href="/azurebonds">
+          <Link  href="/azurebonds">
             <Image
               src={azureCoverImage}
               className="opacity-50 hover:scale-110"
@@ -233,7 +233,7 @@ export default function PoolsOfDarkness() {
               
             />
           </Link>
-          <Link prefetch={false} href="/silverblades">
+          <Link  href="/silverblades">
             <Image
               src={silverBladesCoverImage}
               className="opacity-50 hover:scale-110"

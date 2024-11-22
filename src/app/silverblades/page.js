@@ -224,7 +224,7 @@ export default function SilverBlades() {
         <br />
         <br />
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 justify-items-center md:mx-10">
-          <Link prefetch={false} href="/poolofradiance">
+          <Link  href="/poolofradiance">
           <Image
             className="opacity-50 hover:scale-110"
             src={poolRadCoverImage}
@@ -233,7 +233,7 @@ export default function SilverBlades() {
             
           />
           </Link>
-          <Link prefetch={false} href="/azurebonds">
+          <Link  href="/azurebonds">
             <Image
               src={azureCoverImage}
               className="opacity-50 hover:scale-110"
@@ -250,7 +250,7 @@ export default function SilverBlades() {
               
             />
           
-          <Link prefetch={false} href="/poolsofdarkness">
+          <Link  href="/poolsofdarkness">
             <Image
               src={podCoverImage}
               className="opacity-50 hover:scale-110"

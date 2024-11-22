@@ -215,7 +215,7 @@ export default function PoolOfRadiance() {
             height={400}
             
           />
-          <Link prefetch={false} href="/azurebonds">
+          <Link  href="/azurebonds">
             <Image
               src={azureCoverImage}
               className="opacity-50 hover:scale-110"
@@ -224,7 +224,7 @@ export default function PoolOfRadiance() {
               
             />
           </Link>
-          <Link prefetch={false} href="/silverblades">
+          <Link  href="/silverblades">
             <Image
               src={silverBladesCoverImage}
               className="opacity-50 hover:scale-110"
@@ -233,7 +233,7 @@ export default function PoolOfRadiance() {
               
             />
           </Link>
-          <Link prefetch={false} href="/poolsofdarkness">
+          <Link  href="/poolsofdarkness">
             <Image
               src={podCoverImage}
               className="opacity-50 hover:scale-110"
@@ -324,7 +324,7 @@ export default function PoolOfRadiance() {
         className="row g-1 d-flex justify-content-center"
         style={{ marginTop: "5vh", textAlign: "center" }}
       >
-        <div className="col-md-auto">{splashImage}</div>
+        <div id="splashImageRow">{splashImage}</div>
       </div>
     </div>
   );
