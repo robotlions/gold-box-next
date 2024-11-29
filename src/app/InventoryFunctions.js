@@ -104,7 +104,7 @@ export function ItemEditModule(props) {
     <>
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 mt-5 mb-5 gap-4">
         <div className="grid grid-cols-2">
-          <div>Type:</div>
+          <div>Type:<br/><em className="text-xs">(See list below)</em></div>
           <ValueModule
             value={parseInt(Object.keys(props.loadedItem)) + props.typeIndex}
           />
@@ -116,7 +116,7 @@ export function ItemEditModule(props) {
           />
         </div>
         <div className="grid grid-cols-2">
-          <div>Effect1(Charges):</div>
+          <div>Effect1 (Charges):</div>
           <ValueModule
             value={parseInt(Object.keys(props.loadedItem)) + props.chargeIndex}
           />

@@ -18,6 +18,16 @@ export default function About(){
         >
           About Curse of the Secret Pools!
         </h3>
+       {/* begin test tailwind element */}
+
+     
+
+
+
+       {/* end test tailwind element */}
+      
+
+
         <br/><br/>
        <AccordionCustom accordionItems={accordionItems} />
     </div>
