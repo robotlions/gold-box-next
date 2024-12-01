@@ -57,7 +57,7 @@ export const accordionItems = [
           href="https://github.com/robotlions/gold-box-next"
           className="text-blue-600 font-semibold"
         >
-          Here's the GitHub.
+          Here&apos;s the GitHub.
         </a>
       </span>
     ),
@@ -99,25 +99,25 @@ export const accordionItems = [
           charisma, weird stuff will happen.
         </li>
         <li>
-          Most of the values can't exceed 255, unless they're obviously meant to
+          Most of the values can&apos;t exceed 255, unless they&apos;re obviously meant to
           be large numbers, such as experience and wealth.
         </li>
         <li>
           Certain values - such as saving throws and thief skills - come
-          directly from the AD&D tables and are determined by the character's
+          directly from the AD&D tables and are determined by the character&apos;s
           level and modifiers. These values are set by the game automatically on
           load. So even though you can change them with this editor, the values will reset when the game starts.
         </li>
         <li>
           Where possible, the integer input fields have minimum and maximum
-          values. But those are easy to get around, and it's your game to break.
+          values. But those are easy to get around, and it&apos;s your game to break.
         </li>
         <br />
         <h4>Tips for editing characters</h4>
-        <li>To make a character's strength 18(00), set it to 18(100).</li>
+        <li>To make a character&apos;s strength 18(00), set it to 18(100).</li>
 
         <li>
-          Although this editor provides checkboxes for cleric spells, there's no
+          Although this editor provides checkboxes for cleric spells, there&apos;s no
           way assign a character a specific cleric spell. In AD&D, if a
           character has access to a clerical spell level, that character
           automatically knows all the spells of that level.
@@ -128,37 +128,37 @@ export const accordionItems = [
         </li>
         <li>
           If you want to give a non-magic-user character access to magic-user
-          spells, you don't have to multi-class the character in the game.
+          spells, you don&apos;t have to multi-class the character in the game.
           Simply use the editor to assign magic-user levels to that character.
-          The game won't automatically change the character's class, but that
+          The game won&apos;t automatically change the character&apos;s class, but that
           character will be able to use magic-user spells.
         </li>
         <br />
         <h4>Tips for editing inventory</h4>
         <li>
-          Inventory items can't be named just any string of text. They must be
+          Inventory items can&apos;t be named just any string of text. They must be
           renamed by selecting from the dropdown menus of pre-programmed
           descriptors.
         </li>
         <li>
           Each item has three slots for special effects. For the most part these
-          don't do anything, however:
+          don&apos;t do anything, however:
         </li>
         <li>
-          For wands, the "Effect1(charges)" field determines how many times the
+          For wands, the &quot;Effect1(charges)&quot; field determines how many times the
           wand can be used before its magic is depleted.
         </li>
         <li>
-          For scrolls, the "Effect1(charges)" field determines which spell the
+          For scrolls, the &quot;Effect1(charges)&quot; field determines which spell the
           scroll contains. The spell is determined by an integer that will vary
-          from game to game. Effect2 is the scroll's second spell and Effect3 is
+          from game to game. Effect2 is the scroll&apos;s second spell and Effect3 is
           the third spell.
         </li>
         <li>
           Arrows, darts and certain other items can be assigned an <em>ammo</em>{" "}
           number. This gives a single item multiple uses without taking up
           another inventory slot. This is not the same as duplicating an item.
-          In other words, assigning ammo to a sword won't make multiple copies
+          In other words, assigning ammo to a sword won&apos;t make multiple copies
           of that sword.
         </li>
       </ul>
@@ -247,7 +247,7 @@ export const accordionItems = [
           >
             Gold Box Companion
           </a>
-          . Seriously, if you're into these games, install GBC. It's the gold
+          . Seriously, if you&apos;re into these games, install GBC. It&apos;s the gold
           standard of gold box.
         </p>
         <p>

@@ -376,7 +376,7 @@ export function AccordionCustom(props) {
           </button>
           <div
             className={`overflow-hidden transition-all duration-300 ${
-              openIndex === index ? "max-h-screen" : "max-h-0"
+              openIndex === index ? "h-auto" : "max-h-0"
             }`}
           >
             <div className="px-6 py-4 text-gray-600 text-base">{item.content}</div>
