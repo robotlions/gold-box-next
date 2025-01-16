@@ -2,7 +2,7 @@
 import "./globals.css";
 import NavBar from "./ui/NavBar";
 import Link from "next/link";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 const newDate = new Date();
 const newYear = newDate.getFullYear();
@@ -52,6 +52,7 @@ export default function RootLayout({ children }) {
             and Dragons, gold box games.
           </h1>
           <GoogleAnalytics gaId="G-SF7K44XDRR" />
+          <GoogleTagManager gtmId="GTM-TDZKMK5Z" />
           <NavBar />
           {children}
           <p className="text-center mb-5">
