@@ -381,7 +381,7 @@ const listDisplay = Object.entries(props.gameItemValues).map(([key, value])=>{re
             </svg>
           </button>
           <div
-            className={`overflow-hidden transition-all duration-300 ${
+            className={`overflow-scroll transition-all duration-300 ${
               openIndex === "valueAccordion" ? "max-h-screen" : "max-h-0"
             }`}
           >
