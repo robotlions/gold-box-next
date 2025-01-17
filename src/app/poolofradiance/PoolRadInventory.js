@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { poolRadItemValues } from "./PoolRadData";
+import { poolRadItemTypes } from "./PoolRadData";
 import * as InvFunctions from "../InventoryFunctions";
 
 export default function PoolRadInventory(props) {
@@ -96,7 +97,7 @@ export default function PoolRadInventory(props) {
       </div>
       <br />
         {dataArray ? <ListDisplay /> : null}
-        {dataArray ? <InvFunctions.InventoryTypeDisplay gameName={"Pool of Radiance"} gameItemValues={poolRadItemValues} /> : null}
+        {dataArray ? <InvFunctions.InventoryTypeDisplay gameName={"Pool of Radiance"} gameItemValues={poolRadItemTypes} /> : null}
     </>
   );
 }
